@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './layout/Header';
 import Home from './home/Home';
-import './home/Home.css';
 
 function App() {
   return (
