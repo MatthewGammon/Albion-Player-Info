@@ -8,7 +8,7 @@ export default function Home() {
   };
 
   return (
-    <div className="form d-flex flex-column align-items-center  p-3">
+    <div className="form d-flex flex-column align-items-center bg-dark text-light p-3">
       <div className="text-center">
         <h2>Welcome to Conflict's proprietary regear system!</h2>
         <p>This application is still a work in progress.</p>
