@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Header() {
-  const history = useHistory();
-  const goBack = history.goBack();
   return (
     <div className="header text-light text-center">
       <div className="container">
