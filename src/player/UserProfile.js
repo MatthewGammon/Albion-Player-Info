@@ -44,7 +44,7 @@ export default function UserProfile() {
             <Link
               to={{
                 pathname: '/playerDeaths',
-                state: playerId,
+                state: { playerId: playerId, name: playerData.Name },
               }}
             >
               Recent Deaths
