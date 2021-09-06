@@ -6,7 +6,6 @@ export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
   const location = useLocation();
   const playerId = location.state;
-  console.log(playerData);
 
   useEffect(loadData, [playerId]);
 
@@ -50,14 +49,6 @@ export default function UserProfile() {
             >
               Recent Deaths
             </Link>
-
-            <a
-              href="https://render.albiononline.com/v1/item/Master's%20Bloodletter.png?locale=en"
-              alt="bloodletter"
-              className="card-link"
-            >
-              Another link
-            </a>
           </div>
         </div>
       </main>
