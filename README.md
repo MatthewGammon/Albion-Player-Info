@@ -11,6 +11,10 @@ Each Kill and Death will link to a page that displays specific information about
 * Gear worn by Killer and Victim
 * Items in inventory on death
 
+## Deployed Application
+[Conflict Regear] (https://conflict-regear.vercel.app/home)
+
+
 ## Tech and Tools
 
 - React.js
@@ -20,3 +24,7 @@ Each Kill and Death will link to a page that displays specific information about
 - Express
 - Knex
 - PostgreSQL
+
+
+## Project Backend
+[Backend Repo] (https://github.com/MatthewGammon/Conflict-Regear-Backend)
