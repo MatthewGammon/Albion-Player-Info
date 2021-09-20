@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PlayerId from './PlayerId';
+import Spinner from 'react-bootstrap/Spinner';
 
 export default function Home() {
   const [userName, setUserName] = useState({
@@ -7,6 +8,7 @@ export default function Home() {
   });
   const [playerInfo, setPlayerInfo] = useState(null);
   const [playerInfoError, setPlayerInfoError] = useState(null);
+  const [isLoading, setIsLoading] = useState();
 
   const handleNameChange = ({ target: { name, value } }) => {
     setUserName((previousUserName) => ({
@@ -17,11 +19,16 @@ export default function Home() {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    const abortController = new AbortController();
     setPlayerInfoError(null);
-    fetch(`/search?q=${userName.name}`)
+    setIsLoading(true);
+    console.log(isLoading);
+    fetch(`/search?q=${userName.name}`, abortController.signal)
       .then((res) => res.json())
       .then(setPlayerInfo)
+      .then(() => setIsLoading(false))
       .catch(playerInfoError);
+    return () => abortController.abort();
   };
 
   return (
@@ -49,10 +56,20 @@ export default function Home() {
         </button>
       </form>
 
-      <h3 className="mt-3">
-        Please be patient as this may take some time to load from the Albion
-        API. Thank you.
-      </h3>
+      {isLoading ? (
+        <div className="loading text-center">
+          {' '}
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>{' '}
+          <p>
+            Please be patient as this may take some time to load from the Albion
+            API. Thank you.
+          </p>{' '}
+        </div>
+      ) : (
+        ''
+      )}
 
       <PlayerId playerInfo={playerInfo} />
     </main>
