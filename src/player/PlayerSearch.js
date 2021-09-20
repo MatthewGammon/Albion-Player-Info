@@ -3,6 +3,7 @@ import PlayerId from './PlayerId';
 import Spinner from 'react-bootstrap/Spinner';
 import { fetchWithTimeout } from '../../src/utils/api';
 import ErrorAlert from '../layout/errors/ErrorAlert';
+import { baseUrl } from '../utils/api';
 
 export default function Home() {
   const [userName, setUserName] = useState({
@@ -11,7 +12,6 @@ export default function Home() {
   const [playerInfo, setPlayerInfo] = useState(null);
   const [playerInfoError, setPlayerInfoError] = useState(null);
   const [isLoading, setIsLoading] = useState();
-  const url = process.env.REACT_APP_BASE_URL;
 
   const handleNameChange = ({ target: { name, value } }) => {
     setUserName((previousUserName) => ({
@@ -26,7 +26,7 @@ export default function Home() {
       setPlayerInfoError(null);
       setIsLoading(true);
       const response = await fetchWithTimeout(
-        `${url}/search?q=${userName.name}`
+        `${baseUrl}/search?q=${userName.name}`
       );
       const playerData = await response.json();
       setPlayerInfo(playerData);

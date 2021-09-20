@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
+import { baseUrl } from '../utils/api';
 
 export default function PlayerDeaths() {
   const [deathData, setDeathData] = useState(null);
@@ -14,7 +15,7 @@ export default function PlayerDeaths() {
 
   function loadData() {
     setIsLoading(true);
-    fetch(`/players/${playerId}/deaths`)
+    fetch(`${baseUrl}/players/${playerId}/deaths`)
       .then((res) => res.json())
       .then(setDeathData)
       .then(() => setIsLoading(false));

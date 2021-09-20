@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import './PlayerKills.css';
+import { baseUrl } from '../utils/api';
 
 export default function PlayerKills() {
   const [killsData, setKillsData] = useState(null);
@@ -16,7 +17,7 @@ export default function PlayerKills() {
   function loadData() {
     setIsLoading(true);
     const abortController = new AbortController();
-    fetch(`/players/${playerId}/kills`, abortController.signal)
+    fetch(`${baseUrl}/players/${playerId}/kills`, abortController.signal)
       .then((res) => res.json())
       .then(setKillsData)
       .then(() => setIsLoading(false));

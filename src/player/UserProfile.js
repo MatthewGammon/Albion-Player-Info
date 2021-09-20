@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './UserProfile.css';
+import { baseUrl } from '../utils/api';
 
 export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
@@ -11,7 +12,7 @@ export default function UserProfile() {
   useEffect(loadData, [playerId]);
 
   function loadData() {
-    fetch(`/players/${playerId}`)
+    fetch(`${baseUrl}/players/${playerId}`)
       .then((res) => res.json())
       .then(setPlayerData);
   }
