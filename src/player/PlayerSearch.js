@@ -9,6 +9,7 @@ export default function Home() {
   const [playerInfo, setPlayerInfo] = useState(null);
   const [playerInfoError, setPlayerInfoError] = useState(null);
   const [isLoading, setIsLoading] = useState();
+  const url = process.env.API_BASE_URL;
 
   const handleNameChange = ({ target: { name, value } }) => {
     setUserName((previousUserName) => ({
@@ -23,7 +24,7 @@ export default function Home() {
     setPlayerInfoError(null);
     setIsLoading(true);
     console.log(isLoading);
-    fetch(`/search?q=${userName.name}`, abortController.signal)
+    fetch(`${url}/search?q=${userName.name}`, abortController.signal)
       .then((res) => res.json())
       .then(setPlayerInfo)
       .then(() => setIsLoading(false))
