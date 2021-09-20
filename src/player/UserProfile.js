@@ -4,6 +4,7 @@ import './UserProfile.css';
 
 export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
+
   const location = useLocation();
   const playerId = location.state;
 
@@ -41,6 +42,15 @@ export default function UserProfile() {
             </li>
           </ul>
           <div className="card-body">
+            <Link
+              className="player-kills-link me-2"
+              to={{
+                pathname: '/playerKills',
+                state: { playerId: playerId, name: playerData.Name },
+              }}
+            >
+              Recent Kills
+            </Link>
             <Link
               to={{
                 pathname: '/playerDeaths',
