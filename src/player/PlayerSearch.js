@@ -22,6 +22,7 @@ export default function Home() {
 
   async function handleSubmit(event) {
     try {
+      console.log(baseUrl);
       event.preventDefault();
       setPlayerInfoError(null);
       setIsLoading(true);
