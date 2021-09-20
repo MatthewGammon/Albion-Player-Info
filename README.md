@@ -12,7 +12,7 @@ Each Kill and Death will link to a page that displays specific information about
 * Items in inventory on death
 
 ## Deployed Application
-[Conflict Regear] (https://conflict-regear.vercel.app/home)
+[Conflict Regear](https://conflict-regear.vercel.app/home)
 
 
 ## Tech and Tools
@@ -27,4 +27,4 @@ Each Kill and Death will link to a page that displays specific information about
 
 
 ## Project Backend
-[Backend Repo] (https://github.com/MatthewGammon/Conflict-Regear-Backend)
+[Backend Repo](https://github.com/MatthewGammon/Conflict-Regear-Backend)
