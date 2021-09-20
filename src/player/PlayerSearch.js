@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PlayerId from './PlayerId';
 import Spinner from 'react-bootstrap/Spinner';
+import { fetchWithTimeout } from '../../src/utils/api';
+import ErrorAlert from '../layout/errors/ErrorAlert';
 
 export default function Home() {
   const [userName, setUserName] = useState({
@@ -9,7 +11,7 @@ export default function Home() {
   const [playerInfo, setPlayerInfo] = useState(null);
   const [playerInfoError, setPlayerInfoError] = useState(null);
   const [isLoading, setIsLoading] = useState();
-  const url = process.env.API_BASE_URL;
+  const url = process.env.REACT_APP_BASE_URL;
 
   const handleNameChange = ({ target: { name, value } }) => {
     setUserName((previousUserName) => ({
@@ -18,19 +20,36 @@ export default function Home() {
     }));
   };
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    const abortController = new AbortController();
-    setPlayerInfoError(null);
-    setIsLoading(true);
-    console.log(isLoading);
-    fetch(`${url}/search?q=${userName.name}`, abortController.signal)
-      .then((res) => res.json())
-      .then(setPlayerInfo)
-      .then(() => setIsLoading(false))
-      .catch(playerInfoError);
-    return () => abortController.abort();
-  };
+  async function handleSubmit(event) {
+    try {
+      event.preventDefault();
+      setPlayerInfoError(null);
+      setIsLoading(true);
+      const response = await fetchWithTimeout(
+        `${url}/search?q=${userName.name}`
+      );
+      const playerData = await response.json();
+      setPlayerInfo(playerData);
+      setIsLoading(false);
+    } catch (error) {
+      setPlayerInfoError(error);
+      setIsLoading(false);
+    }
+  }
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const abortController = new AbortController();
+  //   setPlayerInfoError(null);
+  //   setIsLoading(true);
+  //   console.log(isLoading);
+  //   fetch(`/search?q=${userName.name}`, abortController.signal)
+  //     .then((res) => res.json())
+  //     .then(setPlayerInfo)
+  //     .then(() => setIsLoading(false))
+  //     .catch(playerInfoError);
+  //   return () => abortController.abort();
+  // };
 
   return (
     <main
@@ -38,7 +57,7 @@ export default function Home() {
       style={{ backgroundColor: 'white' }}
     >
       <h1>Enter Your Character's Name</h1>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={handleSubmit}>
         <label className="mt-4" htmlFor="name">
           Name:
         </label>
@@ -56,6 +75,10 @@ export default function Home() {
           Submit
         </button>
       </form>
+
+      <div className="error-alert">
+        <ErrorAlert error={playerInfoError} />
+      </div>
 
       {isLoading ? (
         <div className="loading text-center">
