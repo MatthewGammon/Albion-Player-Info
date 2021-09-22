@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <div className="form d-flex flex-column align-items-center bg-dark text-light p-3">
       <div className="text-center">
-        <h2>Welcome to Conflict's proprietary regear system!</h2>
         <p>This application is still a work in progress.</p>
         <p>
           Feel free to poke around. There is some base functionality for viewing
-          player data, but the regear system is not yet implemented.
+          limited player data, but many features are yet to be completed or
+          implemented.
         </p>
         <p>Styling will come after all functionality is in place.</p>
       </div>
