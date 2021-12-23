@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../utils/api';
+import './PlayerDeaths.css';
 
 export default function PlayerDeaths() {
   const [deathData, setDeathData] = useState(null);
@@ -24,15 +25,15 @@ export default function PlayerDeaths() {
   let content;
   if (deathData) {
     content = deathData.map((death, index) => (
-      <div key={index} className="d-flex">
+      <div key={index} className="death d-flex">
         <div className="col-2">
           <p>{death.Killer.Name}</p>
         </div>
         <div className="col-2">
-          <p>{death.Killer.GuildName}</p>
+          <p>{death.Killer.GuildName || 'none'}</p>
         </div>
         <div className="col-2">
-          <p>{death.Killer.AllianceName}</p>
+          <p>{death.Killer.AllianceName || 'none'}</p>
         </div>
         <div className="col-2">
           <p>{death.Victim.DeathFame}</p>
@@ -60,7 +61,9 @@ export default function PlayerDeaths() {
         ) : (
           ''
         )}
-        <h1>{name}'s Most Recent Deaths</h1>
+        <div className="player-deaths-header">
+          <h1>{name}'s Most Recent Deaths</h1>
+        </div>
       </div>
 
       <div className="headers row">
@@ -68,7 +71,7 @@ export default function PlayerDeaths() {
         <h4 className="col-2">Guild</h4>
         <h4 className="col-2">Alliance</h4>
         <h4 className="col-2">Death Fame</h4>
-        <h4 className="col-2">Killer's Avg IP</h4>
+        <h4 className="col-2">Killer's IP</h4>
         <h4 className="col-2">Victim's IP</h4>
       </div>
       <hr />
