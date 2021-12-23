@@ -1,5 +1,5 @@
 .header {
-  background: rgb(1, 115, 160);
+  background-color: rgb(1, 115, 160);
   padding: 10px;
 }
 
@@ -12,10 +12,10 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
     sans-serif 'Lucida Sans', Arial, sans-serif serif 'Lucida Sans', Arial,
     sans-serif;
-  text-shadow: 1px 1px 2px white;
+  text-shadow: 0px 0px 2px white;
   font-weight: bold;
 }
 
 .lead {
-  color: black;
+  color: white;
 }
