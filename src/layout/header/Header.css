@@ -1,8 +1,21 @@
 .header {
-  background: black;
+  background: rgb(1, 115, 160);
   padding: 10px;
 }
 
 .header p {
   font-size: 24px;
+}
+
+.header-text {
+  font-size: 60px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+    sans-serif 'Lucida Sans', Arial, sans-serif serif 'Lucida Sans', Arial,
+    sans-serif;
+  text-shadow: 1px 1px 2px white;
+  font-weight: bold;
+}
+
+.lead {
+  color: black;
 }
