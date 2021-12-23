@@ -20,6 +20,7 @@ export default function PlayerKills() {
     fetch(`${baseUrl}/players/${playerId}/kills`, abortController.signal)
       .then((res) => res.json())
       .then(setKillsData)
+      .then(console.log(killsData))
       .then(() => setIsLoading(false));
     return () => abortController.abort();
   }
@@ -60,7 +61,7 @@ export default function PlayerKills() {
   }
 
   return (
-    <main className="d-flex flex-column ms-4">
+    <main className="d-flex flex-column ms-4 me-4">
       <div className="text-center">
         {isLoading ? (
           <div className="loading-deaths">
@@ -82,7 +83,7 @@ export default function PlayerKills() {
         <h4 className="col">Guild</h4>
         <h4 className="col">Alliance</h4>
         <h4 className="col">Kill Fame</h4>
-        <h4 className="col">Killer's Avg IP</h4>
+        <h4 className="col">Killer's IP</h4>
         <h4 className="col">Victim's IP</h4>
       </div>
       <hr />
