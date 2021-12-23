@@ -1,28 +1,48 @@
 .battles-link {
   font-size: 15px;
-  color: white;
-  background-color: black;
+  color: black;
   text-decoration: none;
   padding: 5px;
+}
+
+.battles-link:visited {
+  color: rgb(72, 13, 149);
+}
+
+.battles-link:hover {
+  color: rgb(8, 221, 210);
+}
+
+.battles-link:active {
+  color: rgb(12, 221, 12);
 }
 
 .kill p {
   margin-bottom: 10px;
   padding: 5px 0px 5px 5px;
-  background-color: rgb(255, 49, 117);
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
+  background-color: rgb(11, 86, 136);
+  color: white;
+  font-size: 16px;
+  /* font-weight: bold; */
 }
 
 .player-kills-header {
-  background-color: black;
+  background-color: rgb(3, 87, 121);
   color: white;
   padding: 5px 0px;
   margin: 15px 0px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: 5px;
 }
 
 .victim-name {
   width: 10%;
+}
+
+.headers h4 {
+  font-size: 22px;
+}
+
+.col {
+  color: white;
 }
