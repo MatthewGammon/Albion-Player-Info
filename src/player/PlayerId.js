@@ -14,8 +14,7 @@ export default function PlayerId({ playerInfo }) {
         <div>
           <Link
             to={{
-              pathname: `/userProfile`,
-              state: playerId,
+              pathname: `/userProfile/${playerId}`,
             }}
           >
             View My Profile
