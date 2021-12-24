@@ -1,13 +1,13 @@
 import { React, useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './UserProfile.css';
 import { baseUrl } from '../utils/api';
 
 export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
 
-  const location = useLocation();
-  const playerId = location.state;
+  const params = useParams();
+  const playerId = params.playerId;
 
   useEffect(loadData, [playerId]);
 
@@ -46,16 +46,16 @@ export default function UserProfile() {
             <Link
               className="player-kills-link me-2"
               to={{
-                pathname: '/playerKills',
-                state: { playerId: playerId, name: playerData.Name },
+                pathname: `/playerKills/${playerId}`,
+                state: { name: playerData.Name },
               }}
             >
               Recent Kills
             </Link>
             <Link
               to={{
-                pathname: '/playerDeaths',
-                state: { playerId: playerId, name: playerData.Name },
+                pathname: `/playerDeaths/${playerId}`,
+                state: { name: playerData.Name },
               }}
             >
               Recent Deaths
