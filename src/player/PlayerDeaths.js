@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../utils/api';
 import './PlayerDeaths.css';
@@ -8,8 +8,9 @@ export default function PlayerDeaths() {
   const [deathData, setDeathData] = useState(null);
   const [isLoading, setIsLoading] = useState();
 
+  const params = useParams();
+  const playerId = params.playerId;
   const location = useLocation();
-  const playerId = location.state.playerId;
   const name = location.state.name;
 
   useEffect(loadData, [playerId]);
