@@ -22,7 +22,6 @@ export default function Home() {
 
   async function handleSubmit(event) {
     try {
-      console.log(baseUrl);
       event.preventDefault();
       setPlayerInfoError(null);
       setIsLoading(true);
@@ -37,20 +36,6 @@ export default function Home() {
       setIsLoading(false);
     }
   }
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const abortController = new AbortController();
-  //   setPlayerInfoError(null);
-  //   setIsLoading(true);
-  //   console.log(isLoading);
-  //   fetch(`/search?q=${userName.name}`, abortController.signal)
-  //     .then((res) => res.json())
-  //     .then(setPlayerInfo)
-  //     .then(() => setIsLoading(false))
-  //     .catch(playerInfoError);
-  //   return () => abortController.abort();
-  // };
 
   return (
     <main
