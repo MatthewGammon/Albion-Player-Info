@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import './PlayerKills.css';
 import { baseUrl } from '../utils/api';
@@ -8,8 +8,10 @@ export default function PlayerKills() {
   const [killsData, setKillsData] = useState(null);
   const [isLoading, setIsLoading] = useState();
 
+  // can use destructuring to pull playerId from useParams instead of declaring two variables
+  const params = useParams();
+  const playerId = params.playerId;
   const location = useLocation();
-  const playerId = location.state.playerId;
   const name = location.state.name;
 
   useEffect(loadData, [playerId]);
