@@ -26,7 +26,7 @@ export default function App() {
         <Route exact={true} path="/">
           <Redirect to={'/home'} />
         </Route>
-        <Route exact={true} path="/userProfile">
+        <Route exact={true} path="/userProfile/:playerId">
           <UserProfile />
         </Route>
         <Route exact={true} path="/playerId">
@@ -38,10 +38,10 @@ export default function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/playerKills">
+        <Route path="/playerKills/:playerId">
           <PlayerKills />
         </Route>
-        <Route path="/playerDeaths">
+        <Route path="/playerDeaths/:playerId">
           <PlayerDeaths />
         </Route>
         <Route path="/battles/:battleId">
