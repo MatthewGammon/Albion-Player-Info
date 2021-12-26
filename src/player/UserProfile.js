@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { baseUrl } from '../utils/api';
 import { avatar } from '../utils/playerAvatar';
+import dom from '../images/dom.jpg';
 import './UserProfile.css';
 
 export default function UserProfile() {
@@ -23,7 +24,16 @@ export default function UserProfile() {
       <main className="player-info d-flex justify-content-center">
         <div className="card">
           <div className="player-avatar">
-            <img src={avatar} alt="player avatar" />
+            <img
+              src={
+                playerData
+                  ? playerData.Name === 'Domknit'
+                    ? dom
+                    : avatar
+                  : null
+              }
+              alt="player avatar"
+            />
           </div>
           <div className="card-body">
             <h3 className="card-title">Player: {playerData.Name}</h3>
