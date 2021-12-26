@@ -1,8 +1,9 @@
 import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { baseUrl } from '../utils/api';
-import { avatar } from '../utils/playerAvatar';
-import dom from '../images/dom.jpg';
+import { avatar, ring } from '../utils/avatars-rings';
+import { playerIsDom } from '../utils/playerIsDom';
+import dom from '../images/avatars/dom.jpg';
 import './UserProfile.css';
 
 export default function UserProfile() {
@@ -19,22 +20,24 @@ export default function UserProfile() {
       .then(setPlayerData);
   }
 
+  const isDom = playerIsDom(playerData?.Name);
+
   return (
     playerData && (
       <main className="player-info d-flex justify-content-center">
         <div className="card">
-          <div className="player-avatar">
-            <img
-              src={
-                playerData
-                  ? playerData.Name === 'Domknit'
-                    ? dom
-                    : avatar
-                  : null
-              }
-              alt="player avatar"
-            />
+          <div className="ring-avatar">
+            {!isDom && (
+              <div className="ring">
+                <img src={ring} alt="avatar ring" />
+              </div>
+            )}
+
+            <div className="avatar">
+              <img src={!isDom ? avatar : dom} alt="player avatar" />
+            </div>
           </div>
+
           <div className="card-body">
             <h3 className="card-title">Player: {playerData.Name}</h3>
             <h5 className="card-text">Guild: {playerData.GuildName}</h5>
@@ -51,9 +54,8 @@ export default function UserProfile() {
               Fame Ratio: {playerData.FameRatio}
             </li>
           </ul>
-          <div className="card-body">
+          <div className="links">
             <Link
-              className="player-kills-link me-2"
               to={{
                 pathname: `/playerKills/${playerId}`,
                 state: { name: playerData.Name },
