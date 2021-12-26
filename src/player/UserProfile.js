@@ -1,7 +1,8 @@
 import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './UserProfile.css';
 import { baseUrl } from '../utils/api';
+import { avatar } from '../utils/playerAvatar';
+import './UserProfile.css';
 
 export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
@@ -21,11 +22,9 @@ export default function UserProfile() {
     playerData && (
       <main className="player-info d-flex justify-content-center">
         <div className="card">
-          <img
-            src="https://i.imgur.com/4YKxVQj.png"
-            className="card-img-top"
-            alt="albion male character"
-          />
+          <div className="player-avatar">
+            <img src={avatar} alt="player avatar" />
+          </div>
           <div className="card-body">
             <h3 className="card-title">Player: {playerData.Name}</h3>
             <h5 className="card-text">Guild: {playerData.GuildName}</h5>
