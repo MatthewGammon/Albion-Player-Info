@@ -4,15 +4,15 @@
 }
 
 .header p {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .header-text {
-  font-size: 60px;
+  font-size: 36px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
     sans-serif 'Lucida Sans', Arial, sans-serif serif 'Lucida Sans', Arial,
     sans-serif;
-  text-shadow: 0px 0px 2px white;
+  text-shadow: 0px 0px 1px white;
   font-weight: bold;
 }
 
