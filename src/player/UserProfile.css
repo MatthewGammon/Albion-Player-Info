@@ -1,3 +1,37 @@
-.player-avatar img {
-  height: 400px;
+.ring-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.ring {
+  position: absolute;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.links a:link {
+  color: blue;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.links a:visited {
+  color: purple;
+}
+
+.links a:hover {
+  color: rgb(1, 115, 160);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.links a:active {
+  color: royalblue;
+  text-decoration: underline;
 }
