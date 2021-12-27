@@ -2,6 +2,11 @@
 This is a hobby project being built by an aspiring developer. 
 It is unlikely that this project will ever be used by the public, but instead is being developed for personal and possible internal guild use. 
 
+The initial player search will take some time as Heroku spins up the proxy server. 
+The Albion API is also notoriously slow and as such I have set a 60 second timeout for player fetch requests. 
+You can expect to have to submit your request one to two times before a successful return. 
+That player will then be cached for a length of time and subsequent requests will be much faster. 
+
 Any feedback and/or contributions are welcomed!
 
 # Project Goals
