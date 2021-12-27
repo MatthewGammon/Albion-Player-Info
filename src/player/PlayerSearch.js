@@ -24,6 +24,7 @@ export default function Home() {
     try {
       event.preventDefault();
       setPlayerInfo(null);
+      setPlayerInfoError(null);
       setIsLoading(true);
       const response = await fetchWithTimeout(
         `${baseUrl}/search?q=${userName.name}`
