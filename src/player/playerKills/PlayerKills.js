@@ -2,7 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { useLocation, Link, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import './PlayerKills.css';
-import { baseUrl } from '../utils/api';
+import { baseUrl } from '../../utils/api';
 
 export default function PlayerKills() {
   const [killsData, setKillsData] = useState(null);

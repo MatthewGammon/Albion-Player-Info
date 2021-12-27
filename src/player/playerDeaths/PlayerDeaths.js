@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
-import { baseUrl } from '../utils/api';
+import { baseUrl } from '../../utils/api';
 import './PlayerDeaths.css';
 
 export default function PlayerDeaths() {

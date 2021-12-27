@@ -1,9 +1,9 @@
 import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { baseUrl } from '../utils/api';
-import { avatar, ring } from '../utils/avatars-rings';
-import { playerIsDom } from '../utils/playerIsDom';
-import dom from '../images/avatars/dom.jpg';
+import { baseUrl } from '../../utils/api';
+import { avatar, ring } from '../../utils/avatars-rings';
+import { playerIsDom } from '../../utils/playerIsDom';
+import dom from '../../images/avatars/dom.jpg';
 import './UserProfile.css';
 
 export default function UserProfile() {

@@ -3,12 +3,12 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import Home from './home/Home';
 import Header from './layout/header/Header';
 import Footer from './layout/footer/Footer';
-import UserProfile from '../src/player/UserProfile';
+import UserProfile from './player/userProfile/UserProfile';
 import NotFound from '../src/layout/notFound/NotFound';
-import PlayerId from './player/PlayerId';
+import PlayerId from './player/playerId/PlayerId';
 import PlayerSearch from './player/PlayerSearch';
-import PlayerKills from './player/PlayerKills';
-import PlayerDeaths from './player/PlayerDeaths';
+import PlayerKills from './player/playerKills/PlayerKills';
+import PlayerDeaths from './player/playerDeaths/PlayerDeaths';
 import Battle from './battles/Battle';
 
 import './App.css';

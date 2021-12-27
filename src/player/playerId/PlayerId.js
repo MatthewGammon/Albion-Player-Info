@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PlayerNotFound from './PlayerNotFound';
+import PlayerNotFound from '../../layout/notFound/PlayerNotFound';
 import './PlayerId.css';
 
 export default function PlayerId({ playerInfo }) {
