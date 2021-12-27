@@ -17,10 +17,14 @@ export default function UserProfile() {
   function loadData() {
     fetch(`${baseUrl}/players/${playerId}`)
       .then((res) => res.json())
-      .then(setPlayerData);
+      .then(setPlayerData)
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   const isDom = playerIsDom(playerData?.Name);
+  console.log(playerData);
 
   return (
     playerData && (
@@ -29,12 +33,17 @@ export default function UserProfile() {
           <div className="ring-avatar">
             {!isDom && (
               <div className="ring">
-                <img src={ring} alt="avatar ring" />
+                <img src={ring} alt="avatar ring" width={251} height={251} />
               </div>
             )}
 
             <div className="avatar">
-              <img src={!isDom ? avatar : dom} alt="player avatar" />
+              <img
+                src={!isDom ? avatar : dom}
+                alt="player avatar"
+                width={251}
+                height={251}
+              />
             </div>
           </div>
 
