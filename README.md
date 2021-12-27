@@ -1,3 +1,9 @@
+# Important Info
+This is a hobby project being built by an aspiring developer. 
+It is unlikely that this project will ever be used by the public, but instead is being developed for personal and possible internal guild use. 
+
+Any feedback and/or contributions are welcomed!
+
 # Project Goals
 
 This project will be a full stack web application that consumes both third party APIs and custom endpoints.
@@ -11,7 +17,7 @@ Each Kill and Death will link to a page that displays specific information about
 * Gear worn by Killer and Victim
 * Items in inventory on death
 
-## Deployed Application
+## Demo Application
 [Albion Online Player Info](https://albion-player-info.vercel.app/home)
 
 
