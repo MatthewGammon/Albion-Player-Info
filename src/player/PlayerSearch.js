@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PlayerId from './PlayerId';
+import PlayerId from './playerId/PlayerId';
 import Spinner from 'react-bootstrap/Spinner';
 import { fetchWithTimeout } from '../../src/utils/api';
 import ErrorAlert from '../layout/errors/ErrorAlert';
@@ -23,6 +23,7 @@ export default function Home() {
   async function handleSubmit(event) {
     try {
       event.preventDefault();
+      setPlayerInfo(null);
       setPlayerInfoError(null);
       setIsLoading(true);
       const response = await fetchWithTimeout(
