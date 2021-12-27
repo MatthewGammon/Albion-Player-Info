@@ -9,6 +9,11 @@
   position: absolute;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .links {
   display: flex;
   justify-content: space-around;
