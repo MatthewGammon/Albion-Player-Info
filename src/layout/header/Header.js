@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className="header text-center">
-      <div className="container">
-        <h1 className="header-text">Albion Online Player Info and Regear</h1>
-        <p className="lead">See your stats and submit regear requests!</p>
-      </div>
+    <div className="header">
+      <h1 className="main-text">Albion Online Player Info and Regear</h1>
+      <p className="lead">See your stats and submit regear requests!</p>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <div>
