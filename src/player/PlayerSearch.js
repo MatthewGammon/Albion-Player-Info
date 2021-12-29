@@ -4,6 +4,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import { fetchWithTimeout } from '../../src/utils/api';
 import ErrorAlert from '../layout/errors/ErrorAlert';
 import { baseUrl } from '../utils/api';
+import './PlayerSearch.css';
 
 export default function Home() {
   const [userName, setUserName] = useState({
@@ -40,10 +41,10 @@ export default function Home() {
 
   return (
     <main
-      className="form d-flex flex-column align-items-center  p-3 bg-dark text-light"
+      className="form d-flex flex-column align-items-center p-4 bg-dark text-light"
       style={{ backgroundColor: 'white' }}
     >
-      <h1>Enter Your Character's Name</h1>
+      <h3>Enter Your Character's Name</h3>
       <form onSubmit={handleSubmit}>
         <label className="mt-4" htmlFor="name">
           Name:
