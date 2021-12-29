@@ -1,21 +1,16 @@
 .header {
-  background-color: rgb(1, 115, 160);
-  padding: 10px;
+  background-color: rgb(3, 87, 121);
+  color: rgba(255, 255, 255, 0.89);
+  padding: 20px 0 0 0;
+  text-align: center;
 }
 
-.header p {
-  font-size: 20px;
-}
-
-.header-text {
-  font-size: 36px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
-    sans-serif 'Lucida Sans', Arial, sans-serif serif 'Lucida Sans', Arial,
-    sans-serif;
-  text-shadow: 0px 0px 1px white;
+.main-text {
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
+  text-shadow: 0 0 5px black;
 }
 
 .lead {
-  color: white;
+  text-shadow: 0 0 2px black;
 }
