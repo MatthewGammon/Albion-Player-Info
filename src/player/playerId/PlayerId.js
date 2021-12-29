@@ -8,7 +8,7 @@ export default function PlayerId({ playerInfo }) {
     const playerId = playerInfo.players[0].Id;
 
     return (
-      <div className="playerInfo mt-5 p-3 text-center bg-info text-dark">
+      <div className="playerInfo mt-3 p-3 text-center bg-info text-dark">
         <h2>Success!</h2>
         <h3>Your Albion Online player id is: {playerId}</h3>
         <div>
