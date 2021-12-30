@@ -26,6 +26,18 @@ export default function UserProfile() {
   const isDom = playerIsDom(playerData?.Name);
   console.log(playerData);
 
+  function separator(numb) {
+    let str = numb.toString().split('.');
+    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return str.join('.');
+  }
+
+  let killFame, deathFame;
+  if (playerData) {
+    killFame = separator(playerData.KillFame);
+    deathFame = separator(playerData.DeathFame);
+  }
+
   return (
     playerData && (
       <main className="player-info d-flex justify-content-center">
@@ -48,17 +60,13 @@ export default function UserProfile() {
           </div>
 
           <div className="card-body">
-            <h3 className="card-title">Player: {playerData.Name}</h3>
+            <h3 className="card-title">{playerData.Name}</h3>
             <h5 className="card-text">Guild: {playerData.GuildName}</h5>
             <h5 className="card-text">Alliance: {playerData.AllianceName}</h5>
           </div>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">
-              Kill Fame: {playerData.KillFame}
-            </li>
-            <li className="list-group-item">
-              Death Fame: {playerData.DeathFame}
-            </li>
+            <li className="list-group-item">Kill Fame: {killFame}</li>
+            <li className="list-group-item">Death Fame: {deathFame}</li>
             <li className="list-group-item">
               Fame Ratio: {playerData.FameRatio}
             </li>
