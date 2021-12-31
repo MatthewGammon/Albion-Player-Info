@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { baseUrl } from '../../utils/api';
 import { avatar, ring } from '../../utils/avatars-rings';
 import { playerIsDom } from '../../utils/playerIsDom';
-import dom from '../../images/avatars/dom.jpg';
+import dom from '../../../src/assets/images/avatars/dom.jpg';
 import './UserProfile.css';
 
 export default function UserProfile() {
