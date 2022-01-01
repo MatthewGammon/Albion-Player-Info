@@ -36,10 +36,10 @@ export default function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/playerKills/:playerId">
+        <Route path="/playerKills/:playerName/:playerId">
           <PlayerKills />
         </Route>
-        <Route path="/playerDeaths/:playerId">
+        <Route path="/playerDeaths/:playerName/:playerId">
           <PlayerDeaths />
         </Route>
         <Route path="/battles/:battleId">
