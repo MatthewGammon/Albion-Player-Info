@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../../../utils/api';
 import './PlayerDeaths.css';
@@ -8,10 +8,7 @@ export default function PlayerDeaths() {
   const [deathData, setDeathData] = useState(null);
   const [isLoading, setIsLoading] = useState();
 
-  const params = useParams();
-  const playerId = params.playerId;
-  const location = useLocation();
-  const name = location.state.name;
+  const { playerId, playerName } = useParams();
 
   useEffect(loadData, [playerId]);
 
@@ -63,7 +60,7 @@ export default function PlayerDeaths() {
           ''
         )}
         <div className="player-deaths-header">
-          <h1>{name}'s Most Recent Deaths</h1>
+          <h1>{playerName}'s Most Recent Deaths</h1>
         </div>
       </div>
 
