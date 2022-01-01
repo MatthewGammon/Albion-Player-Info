@@ -8,10 +8,10 @@ const generateImport1 = (dir, type, num, ext) => {
   }
 };
 // used to generate relative paths for image imports for rings and avatars from 10 - n.
-const generateImport2 = (dir, type, num) => {
+const generateImport2 = (dir, type, num, ext) => {
   for (let i = 10; i <= num; i++) {
     console.log(
-      `import ${type}${i} from '../assets/images/${dir}/${type}-${i}.png'`
+      `import ${type}${i} from '../assets/images/${dir}/${type}-${i}.${ext}'`
     );
   }
 };
