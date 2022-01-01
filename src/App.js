@@ -1,19 +1,17 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Home from './home/Home';
-import Header from './layout/header/Header';
-import Footer from './layout/footer/Footer';
-import UserProfile from './player/userProfile/UserProfile';
-import NotFound from '../src/layout/notFound/NotFound';
-import PlayerId from './player/playerId/PlayerId';
-import PlayerSearch from './player/PlayerSearch';
-import PlayerKills from './player/playerKills/PlayerKills';
-import PlayerDeaths from './player/playerDeaths/PlayerDeaths';
-import Battle from './battles/Battle';
+import Home from './components/home/Home';
+import Header from './components/layout/header/Header';
+import Footer from './components/layout/footer/Footer';
+import UserProfile from './components/player/userProfile/UserProfile';
+import NotFound from './components/layout/notFound/NotFound';
+import PlayerId from './components/player/playerId/PlayerId';
+import PlayerSearch from './components/player/playerSearch/PlayerSearch';
+import PlayerKills from './components/player/playerKills/PlayerKills';
+import PlayerDeaths from './components/player/playerDeaths/PlayerDeaths';
+import Battle from './components/battles/Battle';
 
 import './App.css';
-import '../src/layout/header/Header.css';
-import '../src/layout/footer/Footer.css';
 
 export default function App() {
   return (
