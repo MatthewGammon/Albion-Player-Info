@@ -4,13 +4,13 @@ import { baseUrl } from '../../../utils/api';
 import { avatar, ring } from '../../../utils/avatars-rings';
 import { playerIsDom } from '../../../utils/playerIsDom';
 import dom from '../../../../src/assets/images/avatars/dom.jpg';
+import separator from '../../../utils/numbers';
 import './UserProfile.css';
 
 export default function UserProfile() {
   const [playerData, setPlayerData] = useState(null);
 
-  const params = useParams();
-  const playerId = params.playerId;
+  const { playerId } = useParams();
 
   useEffect(loadData, [playerId]);
 
@@ -24,13 +24,6 @@ export default function UserProfile() {
   }
 
   const isDom = playerIsDom(playerData?.Name);
-  // console.log(playerData);
-
-  function separator(numb) {
-    let str = numb.toString().split('.');
-    str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return str.join('.');
-  }
 
   let killFame, deathFame;
   if (playerData) {
@@ -75,7 +68,6 @@ export default function UserProfile() {
             <Link
               to={{
                 pathname: `/playerKills/${playerData.Name}/${playerId}`,
-                state: { name: playerData.Name },
               }}
             >
               Recent Kills
@@ -83,7 +75,6 @@ export default function UserProfile() {
             <Link
               to={{
                 pathname: `/playerDeaths/${playerData.Name}/${playerId}`,
-                state: { name: playerData.Name },
               }}
             >
               Recent Deaths
