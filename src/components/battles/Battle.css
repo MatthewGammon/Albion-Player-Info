@@ -1,0 +1,19 @@
+.kill-or-killed h3 {
+  color: red;
+}
+
+.center-column {
+  margin-top: 20px;
+}
+
+.battle-info p {
+  margin: 2px;
+}
+
+.killer-info,
+.center-column,
+.victim-info {
+  padding: 0px;
+  margin: 5px;
+  text-align: center;
+}
