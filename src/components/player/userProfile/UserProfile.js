@@ -24,7 +24,7 @@ export default function UserProfile() {
   }
 
   const isDom = playerIsDom(playerData?.Name);
-  console.log(playerData);
+  // console.log(playerData);
 
   function separator(numb) {
     let str = numb.toString().split('.');
@@ -74,7 +74,7 @@ export default function UserProfile() {
           <div className="links">
             <Link
               to={{
-                pathname: `/playerKills/${playerId}`,
+                pathname: `/playerKills/${playerData.Name}/${playerId}`,
                 state: { name: playerData.Name },
               }}
             >
@@ -82,7 +82,7 @@ export default function UserProfile() {
             </Link>
             <Link
               to={{
-                pathname: `/playerDeaths/${playerId}`,
+                pathname: `/playerDeaths/${playerData.Name}/${playerId}`,
                 state: { name: playerData.Name },
               }}
             >
