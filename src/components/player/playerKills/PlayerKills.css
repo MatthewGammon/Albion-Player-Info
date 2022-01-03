@@ -1,19 +1,19 @@
-.battles-link {
+.event-link {
   font-size: 15px;
   color: black;
   text-decoration: none;
   padding: 5px;
 }
 
-.battles-link:visited {
+.event-link:visited {
   color: rgb(72, 13, 149);
 }
 
-.battles-link:hover {
+.event-link:hover {
   color: rgb(8, 221, 210);
 }
 
-.battles-link:active {
+.event-link:active {
   color: rgb(12, 221, 12);
 }
 

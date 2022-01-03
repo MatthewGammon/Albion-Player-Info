@@ -30,9 +30,9 @@ export default function PlayerKills() {
         <div className="victim-name col mb-2">
           <p>{kill.Victim.Name}</p>
           <Link
-            className="battles-link"
+            className="event-link"
             to={{
-              pathname: `/battles/${kill.BattleId}`,
+              pathname: `/event/${kill.BattleId}`,
               state: { killData: kill },
             }}
           >
