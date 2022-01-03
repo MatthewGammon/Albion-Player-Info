@@ -9,7 +9,7 @@ import PlayerId from './components/player/playerId/PlayerId';
 import PlayerSearch from './components/player/playerSearch/PlayerSearch';
 import PlayerKills from './components/player/playerKills/PlayerKills';
 import PlayerDeaths from './components/player/playerDeaths/PlayerDeaths';
-import Battle from './components/battles/Battle';
+import BattleEvent from './components/battles/BattleEvent';
 
 import './App.css';
 
@@ -42,8 +42,8 @@ export default function App() {
         <Route path="/playerDeaths/:playerName/:playerId">
           <PlayerDeaths />
         </Route>
-        <Route path="/battles/:battleId">
-          <Battle />
+        <Route path="/event/:battleId">
+          <BattleEvent />
         </Route>
         <Route>
           <NotFound />
