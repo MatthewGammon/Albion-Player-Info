@@ -64,8 +64,8 @@ import avatar62 from '../assets/images/avatars/avatar-62.png';
 import avatar63 from '../assets/images/avatars/avatar-63.png';
 import avatar64 from '../assets/images/avatars/avatar-64.png';
 import avatar65 from '../assets/images/avatars/avatar-65.png';
-// importing images for use as avatar rings
 
+// importing images for use as avatar rings
 import ring1 from '../assets/images/rings/ring-01.png';
 import ring2 from '../assets/images/rings/ring-02.png';
 import ring3 from '../assets/images/rings/ring-03.png';
@@ -97,8 +97,8 @@ import ring28 from '../assets/images/rings/ring-28.png';
 import ring29 from '../assets/images/rings/ring-29.png';
 import ring30 from '../assets/images/rings/ring-30.png';
 import ring31 from '../assets/images/rings/ring-31.png';
-// select and export random avatar for use in UserProfile
-const avatars = [
+
+export const avatars = [
   avatar1,
   avatar2,
   avatar3,
@@ -166,13 +166,7 @@ const avatars = [
   avatar65,
 ];
 
-// having two values for a random index is redundant. I should create a function that takes in an array and returns an index and use that function to get my avatar and ring
-
-const avatarIndex = Math.floor(Math.random() * avatars.length);
-export const avatar = avatars[avatarIndex];
-
-// select and export random ring for use in UserProfile
-const rings = [
+export const rings = [
   ring1,
   ring2,
   ring3,
@@ -205,5 +199,3 @@ const rings = [
   ring30,
   ring31,
 ];
-const ringIndex = Math.floor(Math.random() * rings.length);
-export const ring = rings[ringIndex];
