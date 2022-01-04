@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { baseUrl } from '../../../utils/api';
-import { avatar, ring } from '../../../utils/avatars-rings';
+import { avatars, rings } from '../../../utils/avatars-rings';
 import { playerIsDom } from '../../../utils/playerIsDom';
 import dom from '../../../../src/assets/images/avatars/dom.jpg';
 import separator from '../../../utils/numbers';
@@ -22,6 +22,12 @@ export default function UserProfile() {
         console.error(error);
       });
   }
+
+  const avatarIndex = Math.floor(Math.random() * avatars.length);
+  const avatar = avatars[avatarIndex];
+
+  const ringIndex = Math.floor(Math.random() * rings.length);
+  const ring = rings[ringIndex];
 
   const isDom = playerIsDom(playerData?.Name);
 
