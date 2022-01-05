@@ -2,7 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../../../utils/api';
-import separator from '../../../utils/numbers';
+import { separator } from '../../../utils/numbers';
 import './PlayerDeaths.css';
 
 export default function PlayerDeaths() {

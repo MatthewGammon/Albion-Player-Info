@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { useLocation } from 'react-router-dom';
-import separator from '../../utils/numbers';
+import { separator } from '../../utils/numbers';
 import './BattleEvent.css';
 
 export default function BattleEvent() {
