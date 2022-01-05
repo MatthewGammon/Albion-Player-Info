@@ -4,7 +4,7 @@ import { baseUrl } from '../../../utils/api';
 import { avatars, rings } from '../../../utils/avatars-rings';
 import { playerIsDom } from '../../../utils/playerIsDom';
 import dom from '../../../../src/assets/images/avatars/dom.jpg';
-import separator from '../../../utils/numbers';
+import { separator, generateIndex } from '../../../utils/numbers';
 import './UserProfile.css';
 
 export default function UserProfile() {
@@ -23,11 +23,8 @@ export default function UserProfile() {
       });
   }
 
-  const avatarIndex = Math.floor(Math.random() * avatars.length);
-  const avatar = avatars[avatarIndex];
-
-  const ringIndex = Math.floor(Math.random() * rings.length);
-  const ring = rings[ringIndex];
+  const avatar = avatars[generateIndex(avatars)];
+  const ring = rings[generateIndex(rings)];
 
   const isDom = playerIsDom(playerData?.Name);
 
