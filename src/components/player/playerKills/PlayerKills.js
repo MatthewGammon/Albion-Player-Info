@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import './PlayerKills.css';
 import { baseUrl } from '../../../utils/api';
+import separator from '../../../utils/numbers';
 
 export default function PlayerKills() {
   const [killsData, setKillsData] = useState(null);
@@ -18,7 +19,6 @@ export default function PlayerKills() {
     fetch(`${baseUrl}/players/${playerId}/kills`, abortController.signal)
       .then((res) => res.json())
       .then(setKillsData)
-      .then(console.log(killsData))
       .then(() => setIsLoading(false));
     return () => abortController.abort();
   }
@@ -46,7 +46,7 @@ export default function PlayerKills() {
           <p>{kill.Victim.AllianceName || 'none'}</p>
         </div>
         <div className="col">
-          <p>{kill.Killer.KillFame}</p>
+          <p>{separator(kill.Killer.KillFame)}</p>
         </div>
         <div className="col">
           <p>{Math.floor(kill.Killer.AverageItemPower)}</p>

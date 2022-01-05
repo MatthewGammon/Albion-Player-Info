@@ -1,5 +1,6 @@
 import { React } from 'react';
 import { useLocation } from 'react-router-dom';
+import separator from '../../utils/numbers';
 import './BattleEvent.css';
 
 export default function BattleEvent() {
@@ -61,7 +62,7 @@ export default function BattleEvent() {
               <h3>KILLED</h3>
             </div>
             <div className="event-info">
-              <h5>Kill Fame: {killData.Killer.KillFame}</h5>
+              <h5>Kill Fame: {separator(killData.Killer.KillFame)}</h5>
               <p>Time: {killData.TimeStamp}</p>
               <p>Battle Id: {killData.BattleId}</p>
               <p>Location: {killData.KillArea.split('_').join(' ')}</p>
