@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../../../utils/api';
+import separator from '../../../utils/numbers';
 import './PlayerDeaths.css';
 
 export default function PlayerDeaths() {
@@ -34,7 +35,7 @@ export default function PlayerDeaths() {
           <p>{death.Killer.AllianceName || 'none'}</p>
         </div>
         <div className="col-2">
-          <p>{death.Victim.DeathFame}</p>
+          <p>{separator(death.Victim.DeathFame)}</p>
         </div>
         <div className="col-2">
           <p>{Math.floor(death.Killer.AverageItemPower)}</p>
@@ -47,7 +48,7 @@ export default function PlayerDeaths() {
   }
 
   return (
-    <main className="d-flex flex-column ms-4">
+    <main className="d-flex flex-column ms-4 me-4">
       <div className="text-center mb-3">
         {isLoading ? (
           <div className="loading-deaths">
