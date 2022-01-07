@@ -62,11 +62,11 @@ export default function BattleEvent() {
               <h3>KILLED</h3>
             </div>
             <div className="event-info">
-              <h5>Kill Fame: {separator(killData.Killer.KillFame)}</h5>
+              <h5>Kill Fame: {separator(killData.TotalVictimKillFame)}</h5>
+              <p>Individual Fame Gain: {separator(killData.Killer.KillFame)}</p>
               <p>Time: {killData.TimeStamp}</p>
               <p>Battle Id: {killData.BattleId}</p>
               <p>Location: {killData.KillArea.split('_').join(' ')}</p>
-              <p>Participants: {killData.Participants.length}</p>
             </div>
           </div>
 

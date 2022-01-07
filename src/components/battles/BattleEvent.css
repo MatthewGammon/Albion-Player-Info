@@ -4,10 +4,16 @@
 
 .center-column {
   margin-top: 20px;
+  background-color: white;
 }
 
 .event-info p {
   margin: 2px;
+}
+
+.kill-or-killed,
+.event-info {
+  align-items: center;
 }
 
 .killer-info,
