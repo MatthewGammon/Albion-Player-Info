@@ -23,6 +23,7 @@ export default function PlayerKills() {
     return () => abortController.abort();
   }
 
+  console.log(killsData);
   let content;
   if (killsData) {
     content = killsData.map((kill, index) => (
@@ -46,7 +47,7 @@ export default function PlayerKills() {
           <p>{kill.Victim.AllianceName || 'none'}</p>
         </div>
         <div className="col">
-          <p>{separator(kill.Killer.KillFame)}</p>
+          <p>{separator(kill.TotalVictimKillFame)}</p>
         </div>
         <div className="col">
           <p>{Math.floor(kill.Killer.AverageItemPower)}</p>
