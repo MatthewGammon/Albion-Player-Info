@@ -1,25 +1,28 @@
-.kill-or-killed h3 {
-  color: red;
+.event {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 0.5em;
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 2rem;
 }
 
 .center-column {
-  margin-top: 20px;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 100%;
+  margin-top: 10em;
+  padding: 1.5em;
 }
 
-.event-info p {
-  margin: 2px;
-}
-
-.kill-or-killed,
-.event-info {
-  align-items: center;
-}
-
-.killer-info,
-.center-column,
-.victim-info {
-  padding: 0px;
-  margin: 5px;
-  text-align: center;
+.center-column h4 {
+  color: red;
 }
