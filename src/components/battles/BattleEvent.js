@@ -12,6 +12,8 @@ export default function BattleEvent() {
   const victim = killData.Victim.Name;
   const victimGear = killData.Victim.Equipment;
 
+  const killDate = new Date(killData.TimeStamp).toDateString();
+
   console.log(killData);
 
   return (
@@ -64,8 +66,8 @@ export default function BattleEvent() {
             <div className="event-info">
               <h5>Kill Fame: {separator(killData.TotalVictimKillFame)}</h5>
               <p>Individual Fame Gain: {separator(killData.Killer.KillFame)}</p>
-              <p>Time: {killData.TimeStamp}</p>
-              <p>Battle Id: {killData.BattleId}</p>
+              <p>Date: {killDate}</p>
+              <p>Event Id: {killData.BattleId}</p>
               <p>Location: {killData.KillArea.split('_').join(' ')}</p>
             </div>
           </div>
