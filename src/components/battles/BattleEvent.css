@@ -1,28 +1,55 @@
 .event {
   display: flex;
   justify-content: space-around;
-  margin-top: auto;
+  margin-top: 3em;
   text-align: center;
+}
+
+.killer-info,
+.victim-info {
+  width: 30%;
+}
+
+.killer-info::before {
+  content: 'KILLER';
+}
+
+.victim-info::before {
+  content: 'VICTIM';
+}
+
+.victim-info::before,
+.killer-info::before {
+  font-size: 2vmin;
+  font-weight: bold;
 }
 
 p {
   margin-bottom: 0.5em;
-  font-size: 1.5rem;
+  font-size: 1.5vmin;
 }
 
 h4 {
-  font-size: 2rem;
+  color: white;
+  font-size: 2vmin;
 }
 
-.center-column {
+.event-info {
+  background: white;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   height: 100%;
-  margin-top: 10em;
   padding: 1.5em;
+  width: 20%;
 }
 
-.center-column h4 {
+.event-info h4 {
   color: red;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.event-info p {
+  font-weight: 700;
 }
