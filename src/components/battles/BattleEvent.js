@@ -7,7 +7,7 @@ import './BattleEvent.css';
 
 export default function BattleEvent() {
   const [killData, setKillData] = useState(null);
-  const [gearSprites, setGearSprites] = useState([]);
+
   const { eventId } = useParams();
 
   useEffect(loadKill, [eventId]);
@@ -18,15 +18,13 @@ export default function BattleEvent() {
       .then(setKillData);
   }
 
-  let killer, killerGear, victim, victimGear, killDate;
+  let killer, victim, killDate;
 
   if (killData) {
     killer = killData.Killer.Name;
-    killerGear = killData.Killer.Equipment;
     victim = killData.Victim.Name;
-    victimGear = killData.Victim.Equipment;
 
-    killDate = new Date(killData.TimeStamp).toDateString();
+    killDate = new Date(killData.TimeStamp).toUTCString().slice(0, 22) + ' UTC';
   }
 
   return (
@@ -34,27 +32,27 @@ export default function BattleEvent() {
       {killData ? (
         <div className="event">
           <div className="killer-info">
-            <h4>{killer}</h4>
-            <h6>{killData.Killer.GuildName}</h6>
+            <h4>
+              {killer} [{killData.Killer.GuildName}]
+            </h4>
             <PlayerGear player={killData.Killer} />
           </div>
 
-          <div className="center-column">
-            <div className="kill-or-killed">
-              <h4>KILLED</h4>
-            </div>
-            <div className="event-info">
-              <p>Kill Fame: {separator(killData.TotalVictimKillFame)}</p>
-              <p>Individual Fame Gain: {separator(killData.Killer.KillFame)}</p>
-              <p>Date: {killDate}</p>
-              <p>Event Id: {killData.BattleId}</p>
-              <p>Location: {killData.KillArea.split('_').join(' ')}</p>
-            </div>
+          <div className="event-info">
+            <h4>Battle Info:</h4>
+            <p>
+              <b>{killDate}</b>
+            </p>
+            <p>Kill Fame: {separator(killData.TotalVictimKillFame)}</p>
+            <p>Individual Fame Gain: {separator(killData.Killer.KillFame)}</p>
+            <p>Regear Id: {killData.EventId}</p>
+            <p>{killData.KillArea.split('_').join(' ')}</p>
           </div>
 
           <div className="victim-info">
-            <h4>{victim}</h4>
-            <h6>{killData.Victim.GuildName}</h6>
+            <h4>
+              {victim} [{killData.Victim.GuildName}]
+            </h4>
 
             <PlayerGear player={killData.Victim} />
           </div>
