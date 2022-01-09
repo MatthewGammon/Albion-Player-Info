@@ -15,70 +15,136 @@ export default function PlayerGear({ player }) {
     });
   }
 
+  const dummyImage = 'https://dummyimage.com/217x217/0173a0/0173a0';
+
   return (
     <div className="player-gear">
       {' '}
       <div className="container-1 ">
         <div className="bag">
           <img
-            src={`${spriteBaseUrl}/${gear.Bag?.Type}/?quality=${gear.Bag?.Quality}`}
+            src={
+              gear.Bag
+                ? `${spriteBaseUrl}/${gear.Bag.Type}/?quality=${gear.Bag.Quality}`
+                : dummyImage
+            }
             alt="Bag"
+            width={217}
+            height={217}
           />
         </div>
 
         <div className="main-hand">
           <img
-            src={`${spriteBaseUrl}/${gear.MainHand?.Type}/?quality=${gear.MainHand?.Quality}`}
+            src={
+              gear.MainHand
+                ? `${spriteBaseUrl}/${gear.MainHand.Type}/?quality=${gear.MainHand.Quality}`
+                : dummyImage
+            }
             alt="Main Hand"
+            width={217}
+            height={217}
           />
         </div>
         <div className="potion">
-          <img src={`${spriteBaseUrl}/${gear.Potion?.Type}/`} alt="Potion" />
+          <img
+            src={
+              gear.Potion
+                ? `${spriteBaseUrl}/${gear.Potion.Type}/?quality=${gear.Potion.Quality}`
+                : dummyImage
+            }
+            alt="Potion"
+            width={217}
+            height={217}
+          />
         </div>
       </div>
       <div className="container-2 ">
         <div className="head">
           <img
-            src={`${spriteBaseUrl}/${gear.Head?.Type}/?quality=${gear.Head?.Quality}`}
+            src={
+              gear.Head
+                ? `${spriteBaseUrl}/${gear.Head.Type}/?quality=${gear.Head.Quality}`
+                : dummyImage
+            }
             alt="Head Piece"
+            width={217}
+            height={217}
           />
         </div>
         <div className="chest">
           <img
-            src={`${spriteBaseUrl}/${gear.Armor?.Type}/?quality=${gear.Armor?.Quality}`}
+            src={
+              gear.Armor
+                ? `${spriteBaseUrl}/${gear.Armor.Type}/?quality=${gear.Armor.Quality}`
+                : dummyImage
+            }
             alt="Chest Piece"
+            width={217}
+            height={217}
           />
         </div>
         <div className="boots">
           <img
-            src={`${spriteBaseUrl}/${gear.Shoes?.Type}/?quality=${gear.Shoes?.Quality}`}
+            src={
+              gear.Shoes
+                ? `${spriteBaseUrl}/${gear.Shoes.Type}/?quality=${gear.Shoes.Quality}`
+                : dummyImage
+            }
             alt="Boots"
+            width={217}
+            height={217}
           />
         </div>
         <div className="mount">
           <img
-            src={`${spriteBaseUrl}/${gear.Mount?.Type}/?quality=${gear.Mount?.Quality}`}
+            src={
+              gear.Mount
+                ? `${spriteBaseUrl}/${gear.Mount.Type}/?quality=${gear.Mount.Quality}`
+                : dummyImage
+            }
             alt="Mount"
+            width={217}
+            height={217}
           />
         </div>
       </div>
       <div className="container-3 ">
         <div className="cape">
           <img
-            src={`${spriteBaseUrl}/${gear.Cape?.Type}/?quality=${gear.Cape?.Quality}`}
+            src={
+              gear.Cape
+                ? `${spriteBaseUrl}/${gear.Cape.Type}/?quality=${gear.Cape.Quality}`
+                : dummyImage
+            }
             alt="Cape"
+            width={217}
+            height={217}
           />
         </div>
         <div className="off-hand">
-          {gear.OffHand && (
-            <img
-              src={`${spriteBaseUrl}/${gear.OffHand?.Type}/?quality=${gear.OffHand?.Quality}`}
-              alt="Off Hand"
-            />
-          )}
+          <img
+            src={
+              gear.OffHand
+                ? `${spriteBaseUrl}/${gear.OffHand.Type}/?quality=${gear.OffHand.Quality}`
+                : dummyImage
+            }
+            alt="Off Hand"
+            width={217}
+            height={217}
+          />
         </div>
         <div className="food">
-          <img src={`${spriteBaseUrl}/${gear.Food?.Type}/`} alt="Food" />
+          <img
+            src={
+              gear.Food
+                ? `${spriteBaseUrl}/${gear.Food.Type}/?quality=${gear.Food.Quality}`
+                : dummyImage
+            }
+            alt="Food"
+            width={217}
+            height={217}
+          />
         </div>
       </div>
     </div>
