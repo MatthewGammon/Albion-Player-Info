@@ -42,7 +42,7 @@ export default function App() {
         <Route path="/playerDeaths/:playerName/:playerId">
           <PlayerDeaths />
         </Route>
-        <Route path="/event/:battleId">
+        <Route path="/event/:eventId">
           <BattleEvent />
         </Route>
         <Route>

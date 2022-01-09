@@ -33,8 +33,7 @@ export default function PlayerKills() {
           <Link
             className="event-link"
             to={{
-              pathname: `/event/${kill.BattleId}`,
-              state: { killData: kill },
+              pathname: `/event/${kill.EventId}`,
             }}
           >
             View Battle
