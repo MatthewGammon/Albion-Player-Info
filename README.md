@@ -1,5 +1,6 @@
 # Important Info
 This is a hobby project being built by an aspiring developer. 
+Changes are being pushed to Main to allow for transparency with the progress of this project and to allow for opportunties for feedback. This is not the standard workflow that I would employ.
 It is unlikely that this project will ever be used by the public, but instead is being developed for personal and possible internal guild use. 
 
 The initial player search will take some time as Heroku spins up the proxy server. 
