@@ -35,6 +35,7 @@ export default function BattleEvent() {
             <h4>
               {killer} [{killData.Killer.GuildName}]
             </h4>
+            <h4>{Math.floor(killData.Killer.AverageItemPower)}</h4>
             <PlayerGear player={killData.Killer} />
           </div>
 
@@ -53,6 +54,7 @@ export default function BattleEvent() {
             <h4>
               {victim} [{killData.Victim.GuildName}]
             </h4>
+            <h4>{Math.floor(killData.Victim.AverageItemPower)}</h4>
 
             <PlayerGear player={killData.Victim} />
           </div>
