@@ -38,7 +38,7 @@ h4 {
   background: white;
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 100%;
   padding: 1.5em;
   width: 20%;
@@ -52,4 +52,35 @@ h4 {
 
 .event-info p {
   font-weight: 700;
+}
+
+@media only screen and (max-width: 950px) {
+  .event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .killer-info,
+  .event-info,
+  .victim-info {
+    width: 95%;
+  }
+
+  .killer-info::before,
+  .victim-info::before {
+    font-size: 2rem;
+  }
+
+  .event-info {
+    margin: 2em auto;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
 }
