@@ -35,9 +35,10 @@ h4 {
 }
 
 .event-info {
-  background: white;
   display: flex;
   flex-direction: column;
+  background: white;
+  border: 1px solid red;
   border-radius: 10px;
   height: 100%;
   padding: 1.5em;
@@ -51,7 +52,7 @@ h4 {
 }
 
 .event-info p {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 950px) {
@@ -59,28 +60,52 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1em;
+  }
+
+  .killer-info {
+    margin-bottom: 2em;
   }
 
   .killer-info,
   .event-info,
   .victim-info {
-    width: 95%;
+    width: 90%;
+    order: 2;
   }
 
   .killer-info::before,
   .victim-info::before {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    border: 1px solid red;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
   }
 
+  .killer-info:hover::before {
+    color: red;
+    background-color: black;
+  }
+
+  .victim-info:hover::before {
+    color: black;
+    background-color: red;
+    border: 1px solid black;
+  }
   .event-info {
-    margin: 2em auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    order: 1;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 0em;
   }
 
   h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
