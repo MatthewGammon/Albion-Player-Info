@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner';
 import { baseUrl } from '../../../utils/api';
 import { separator } from '../../../utils/numbers';
@@ -24,57 +24,53 @@ export default function PlayerDeaths() {
   let content;
   if (deathData) {
     content = deathData.map((death, index) => (
-      <div key={index} className="death d-flex">
-        <div className="col-2">
-          <p>{death.Killer.Name}</p>
-        </div>
-        <div className="col-2">
-          <p>{death.Killer.GuildName || 'none'}</p>
-        </div>
-        <div className="col-2">
-          <p>{death.Killer.AllianceName || 'none'}</p>
-        </div>
-        <div className="col-2">
-          <p>{separator(death.Victim.DeathFame)}</p>
-        </div>
-        <div className="col-2">
-          <p>{Math.floor(death.Killer.AverageItemPower)}</p>
-        </div>
-        <div className="col-2">
-          <p>{Math.floor(death.Victim.AverageItemPower)}</p>
-        </div>
-      </div>
+      <tr key={index} className="death-info">
+        <td>
+          <Link
+            className="death-link"
+            to={{
+              pathname: `/event/${death.EventId}`,
+            }}
+          >
+            {death.Killer.Name}
+          </Link>
+        </td>
+        <td>{separator(death.Victim.DeathFame)}</td>
+        <td>{death.Killer.GuildName || 'none'}</td>
+        <td>{death.Killer.AllianceName || 'none'}</td>
+        <td>{Math.floor(death.Killer.AverageItemPower)}</td>
+        <td>{Math.floor(death.Victim.AverageItemPower)}</td>
+      </tr>
     ));
   }
 
   return (
-    <main className="d-flex flex-column ms-4 me-4">
-      <div className="text-center mb-3">
-        {isLoading ? (
-          <div className="loading-deaths">
-            <h2>Loading</h2>
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          </div>
-        ) : (
-          ''
-        )}
-        <div className="player-deaths-header">
-          <h1>{playerName}'s Most Recent Deaths</h1>
+    <main className="recent-deaths">
+      {isLoading ? (
+        <div className="loading-deaths">
+          <h2>Loading</h2>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         </div>
+      ) : (
+        ''
+      )}
+      <div className="player-deaths-header">
+        <h1>{playerName}'s Most Recent Deaths</h1>
       </div>
 
-      <div className="headers row">
-        <h4 className="col-2">Killed By</h4>
-        <h4 className="col-2">Guild</h4>
-        <h4 className="col-2">Alliance</h4>
-        <h4 className="col-2">Death Fame</h4>
-        <h4 className="col-2">Killer's IP</h4>
-        <h4 className="col-2">Victim's IP</h4>
-      </div>
-      <hr />
-      <div className="row">{content}</div>
+      <table className="deaths-content">
+        <tr className="deaths-headers">
+          <th>Killer</th>
+          <th>Death Fame</th>
+          <th>Guild</th>
+          <th>Alliance</th>
+          <th>Killer's IP</th>
+          <th>Victim's IP</th>
+        </tr>
+        {content}
+      </table>
     </main>
   );
 }
