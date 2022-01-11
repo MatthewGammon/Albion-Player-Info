@@ -23,15 +23,13 @@ export default function PlayerKills() {
     return () => abortController.abort();
   }
 
-  console.log(killsData);
   let content;
   if (killsData) {
     content = killsData.map((kill, index) => (
       <tr key={index} className="kill-info">
-        <td className="event-link">
-          {' '}
+        <td>
           <Link
-            className="event-link"
+            className="kill-link"
             to={{
               pathname: `/event/${kill.EventId}`,
             }}
