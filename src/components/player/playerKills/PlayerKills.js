@@ -27,65 +27,54 @@ export default function PlayerKills() {
   let content;
   if (killsData) {
     content = killsData.map((kill, index) => (
-      <div key={index} className="kill d-flex">
-        <div className="victim-name col mb-2">
-          <p>{kill.Victim.Name}</p>
+      <tr key={index} className="kill-info">
+        <td className="event-link">
+          {' '}
           <Link
             className="event-link"
             to={{
               pathname: `/event/${kill.EventId}`,
             }}
           >
-            View Battle
+            {kill.Victim.Name}
           </Link>
-        </div>
-        <div className="col">
-          <p>{kill.Victim.GuildName || 'none'}</p>
-        </div>
-        <div className="col">
-          <p>{kill.Victim.AllianceName || 'none'}</p>
-        </div>
-        <div className="col">
-          <p>{separator(kill.TotalVictimKillFame)}</p>
-        </div>
-        <div className="col">
-          <p>{Math.floor(kill.Killer.AverageItemPower)}</p>
-        </div>
-        <div className="col">
-          <p>{Math.floor(kill.Victim.AverageItemPower)}</p>
-        </div>
-      </div>
+        </td>
+        <td>{separator(kill.TotalVictimKillFame)}</td>
+        <td>{kill.Victim.GuildName || 'none'}</td>
+        <td>{kill.Victim.AllianceName || 'none'}</td>
+        <td>{Math.floor(kill.Killer.AverageItemPower)}</td>
+        <td>{Math.floor(kill.Victim.AverageItemPower)}</td>
+      </tr>
     ));
   }
 
   return (
-    <main className="d-flex flex-column ms-4 me-4">
-      <div className="text-center">
-        {isLoading ? (
-          <div className="loading-deaths">
-            <h2>Loading</h2>
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          </div>
-        ) : (
-          ''
-        )}
-        <div className="player-kills-header">
-          <h1>{playerName}'s Most Recent Kills</h1>
+    <main className="recent-kills">
+      {isLoading ? (
+        <div className="loading-kills">
+          <h2>Loading</h2>
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
         </div>
+      ) : (
+        ''
+      )}
+      <div className="player-kills-header">
+        <h1>{playerName}'s Most Recent Kills</h1>
       </div>
 
-      <div className="headers row">
-        <h4 className="col">Victim</h4>
-        <h4 className="col">Guild</h4>
-        <h4 className="col">Alliance</h4>
-        <h4 className="col">Kill Fame</h4>
-        <h4 className="col">Killer's IP</h4>
-        <h4 className="col">Victim's IP</h4>
-      </div>
-      <hr />
-      <div className="battles-content">{content}</div>
+      <table className="kills-content">
+        <tr className="kills-headers">
+          <th>Victim</th>
+          <th>Kill Fame</th>
+          <th>Guild</th>
+          <th>Alliance</th>
+          <th>Killer's IP</th>
+          <th>Victim's IP</th>
+        </tr>
+        {content}
+      </table>
     </main>
   );
 }
