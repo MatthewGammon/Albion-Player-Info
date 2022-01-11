@@ -19,7 +19,8 @@ A user will be able to type in their character's name and have information about
 * 10 Most Recent Kills and Deaths
 
 Each Kill and Death will link to a page that displays specific information about that battle such as:
-* Number of participants
+* Total Victim Kill Fame
+* Individual Fame Gain by the Killer
 * Gear worn by Killer and Victim
 * Items in inventory on death
 
