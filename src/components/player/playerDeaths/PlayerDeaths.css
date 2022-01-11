@@ -1,42 +1,72 @@
-/* battle links not yet implemented. currently implementation in playerKills uses Link to store state.
-Right clicking to open in a new tab does not maintain state and results in errors and failure to load.
-
-/* .battles-link {
-  font-size: 15px;
-  color: black;
-  text-decoration: none;
-  padding: 5px;
+table {
+  width: 100%;
 }
 
-.battles-link:visited {
-  color: rgb(72, 13, 149);
+.recent-deaths {
+  width: 70%;
+  text-align: center;
+  overflow-x: auto;
+  margin: 0 auto;
 }
 
-.battles-link:hover {
-  color: rgb(8, 221, 210);
-}
-
-.battles-link:active {
-  color: rgb(12, 221, 12);
-} */
-
-.death p {
-  margin-bottom: 10px;
-  padding: 5px 0px 5px 5px;
+.deaths-content {
   background-color: rgb(11, 86, 136);
-  color: white;
-  font-size: 16px;
+  overflow: scroll;
+  margin: 0 auto;
+}
+
+.loading-deaths {
+  text-align: center;
 }
 
 .player-deaths-header {
-  background-color: rgb(3, 87, 121);
-  color: white;
-  padding: 5px 0px;
-  margin: 15px 0px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  border-radius: 5px;
+  background-color: black;
+  color: rgb(7, 147, 202);
+  border-radius: 10px;
+  font-weight: 900;
+  text-align: center;
+  margin: 2em 0em 3em 0em;
+  padding: 1em;
 }
 
-.headers h4 {
-  font-size: 22px;
+.deaths-headers th {
+  font-size: 1.5rem;
+  color: black;
+  padding: 0.75em;
+}
+
+.deaths-content tr {
+  border: 1px solid black;
+}
+
+.deaths-content tr:nth-child(even) {
+  background-color: rgb(1, 115, 160);
+}
+
+.deaths-content td {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  padding: 1em;
+}
+
+.deaths-content tr:hover td {
+  background-color: black;
+}
+
+.death-link {
+  font-size: 1rem;
+  color: white;
+}
+
+.death-link a:hover {
+  color: rgb(1, 115, 160);
+}
+
+.death-link a:active {
+  text-decoration: none;
+}
+
+.death-link a:focus {
+  background-color: black;
 }
