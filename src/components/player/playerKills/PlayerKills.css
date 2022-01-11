@@ -54,19 +54,19 @@ table {
   background-color: black;
 }
 
-.event-link {
+.kill-link {
   font-size: 1rem;
   color: white;
 }
 
-.event-link a:hover {
+.kill-link a:hover {
   color: rgb(1, 115, 160);
 }
 
-.event-link a:active {
+.kill-link a:active {
   text-decoration: none;
 }
 
-.event-link a:focus {
+.kill-link a:focus {
   background-color: black;
 }
