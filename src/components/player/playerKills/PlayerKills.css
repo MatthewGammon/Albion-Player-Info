@@ -3,7 +3,7 @@ table {
 }
 
 .recent-kills {
-  width: 70%;
+  width: 80%;
   text-align: center;
   overflow-x: auto;
   margin: 0 auto;
@@ -21,17 +21,21 @@ table {
 
 .player-kills-header {
   background-color: black;
-  color: rgb(7, 147, 202);
-  border-radius: 10px;
+  color: white;
   font-weight: 900;
   text-align: center;
-  margin: 2em 0em 3em 0em;
+  margin: 2em 0em;
   padding: 1em;
 }
 
+.player-kills-header h1 {
+  font-size: 2.25vmin;
+}
+
 .kills-headers th {
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1.5vmin;
+  background-color: black;
+  color: white;
   padding: 0.75em;
 }
 
@@ -44,7 +48,7 @@ table {
 }
 
 .kills-content td {
-  font-size: 1rem;
+  font-size: 1.5vmin;
   font-weight: 500;
   color: white;
   padding: 1em;
@@ -55,7 +59,7 @@ table {
 }
 
 .kill-link {
-  font-size: 1rem;
+  font-size: 1.5vmin;
   color: white;
 }
 
@@ -69,4 +73,29 @@ table {
 
 .kill-link a:focus {
   background-color: black;
+}
+
+@media only screen and (max-width: 1400px) {
+  .recent-kills {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .recent-kills {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .player-kills-header {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .recent-kills {
+    width: 100%;
+    font-size: 1vmin;
+  }
 }
