@@ -3,14 +3,22 @@ table {
 }
 
 .recent-deaths {
-  width: 70%;
   text-align: center;
   overflow-x: auto;
   margin: 0 auto;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #0173a0,
+    #016c9a,
+    #036494,
+    #075d8e,
+    #0b5688
+  );
 }
 
 .deaths-content {
-  background-color: rgb(11, 86, 136);
+  background-color: #0b5688;
   overflow: scroll;
   margin: 0 auto;
 }
@@ -20,13 +28,17 @@ table {
 }
 
 .player-deaths-header {
-  background-color: black;
-  color: rgb(7, 147, 202);
-  border-radius: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.836);
+  background-color: rgba(0, 0, 0, 0.363);
+  color: white;
   font-weight: 900;
   text-align: center;
-  margin: 2em 0em 3em 0em;
-  padding: 1em;
+  padding: 2vmin;
+  margin: 2em auto;
+}
+
+.player-deaths-header h2 {
+  margin: 0;
 }
 
 .deaths-headers th {
@@ -40,23 +52,24 @@ table {
 }
 
 .deaths-content tr:nth-child(even) {
-  background-color: rgb(1, 115, 160);
+  background-color: #0173a0;
 }
 
 .deaths-content td {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: white;
   padding: 1em;
 }
 
 .deaths-content tr:hover td {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.699);
 }
 
 .death-link {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: white;
+  text-decoration: none;
 }
 
 .death-link a:hover {
@@ -68,5 +81,65 @@ table {
 }
 
 .death-link a:focus {
-  background-color: black;
+  background-color: rgb(136, 38, 38);
+}
+
+@media only screen and (max-width: 1100px) {
+  .recent-deaths {
+    text-align: start;
+  }
+
+  .deaths-headers th {
+    font-size: 1.35rem;
+  }
+
+  .deaths-headers th,
+  .recent-deaths td {
+    padding: 0.5em;
+  }
+
+  .deaths-content td {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .death-link {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 873px) {
+  .recent-deaths th {
+    padding: 0.25em;
+  }
+
+  .deaths-headers th {
+    font-size: 1.125rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .recent-deaths th,
+  .recent-deaths td {
+    padding: 0.5em;
+  }
+
+  .deaths-headers th {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .player-deaths-header {
+    padding: 0.5em;
+  }
+
+  .player-deaths-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .alliance-name,
+  .killer-ip,
+  .victim-ip {
+    display: none;
+  }
 }
