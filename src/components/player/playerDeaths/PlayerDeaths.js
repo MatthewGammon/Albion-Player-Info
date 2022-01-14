@@ -27,7 +27,7 @@ export default function PlayerDeaths() {
       <tr key={index} className="death-info">
         <td>
           <Link
-            className="death-link"
+            className="death-link killer"
             to={{
               pathname: `/event/${death.EventId}`,
             }}
@@ -35,11 +35,15 @@ export default function PlayerDeaths() {
             {death.Killer.Name}
           </Link>
         </td>
-        <td>{separator(death.Victim.DeathFame)}</td>
-        <td>{death.Killer.GuildName || 'none'}</td>
-        <td>{death.Killer.AllianceName || 'none'}</td>
-        <td>{Math.floor(death.Killer.AverageItemPower)}</td>
-        <td>{Math.floor(death.Victim.AverageItemPower)}</td>
+        <td className="victim">{separator(death.Victim.DeathFame)}</td>
+        <td className="guild-name">{death.Killer.GuildName || 'none'}</td>
+        <td className="alliance-name">{death.Killer.AllianceName || 'none'}</td>
+        <td className="killer-ip">
+          {Math.floor(death.Killer.AverageItemPower)}
+        </td>
+        <td className="victim-ip">
+          {Math.floor(death.Victim.AverageItemPower)}
+        </td>
       </tr>
     ));
   }
@@ -57,17 +61,17 @@ export default function PlayerDeaths() {
         ''
       )}
       <div className="player-deaths-header">
-        <h1>{playerName}'s Most Recent Deaths</h1>
+        <h2>{playerName}'s Most Recent Deaths</h2>
       </div>
 
       <table className="deaths-content">
         <tr className="deaths-headers">
           <th>Killer</th>
-          <th>Death Fame</th>
-          <th>Guild</th>
-          <th>Alliance</th>
-          <th>Killer's IP</th>
-          <th>Victim's IP</th>
+          <th>Fame</th>
+          <th className="guild-name">Guild</th>
+          <th className="alliance-name">Alliance</th>
+          <th className="killer-ip">Killer's IP</th>
+          <th className="victim-ip">Victim's IP</th>
         </tr>
         {content}
       </table>
