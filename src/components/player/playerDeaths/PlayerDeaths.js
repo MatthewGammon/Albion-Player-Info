@@ -35,7 +35,7 @@ export default function PlayerDeaths() {
             {death.Killer.Name}
           </Link>
         </td>
-        <td className="victim">{separator(death.Victim.DeathFame)}</td>
+        <td className="victim-fame">{separator(death.Victim.DeathFame)}</td>
         <td className="guild-name">{death.Killer.GuildName || 'none'}</td>
         <td className="alliance-name">{death.Killer.AllianceName || 'none'}</td>
         <td className="killer-ip">
