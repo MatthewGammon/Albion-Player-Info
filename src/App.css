@@ -1,15 +1,15 @@
 html {
-  /* background: linear-gradient(45deg, black, dodgerblue); */
   height: 100%;
   position: relative;
 }
 
 .app {
-  min-height: 100vh; /* will cover the 100% of viewport */
+  min-height: 100vh;
   overflow: hidden;
   display: block;
   position: relative;
   background-color: rgb(1, 115, 160);
+  padding-bottom: 100px;
 }
 
 .footer {
