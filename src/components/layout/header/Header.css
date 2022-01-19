@@ -2,7 +2,7 @@
   background-color: rgb(3, 87, 121);
   color: rgba(255, 255, 255, 0.89);
   margin: 0 auto;
-  padding: 2em;
+  padding: 1em;
   font-size: 2vmax;
   text-align: center;
 }
@@ -11,7 +11,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   text-shadow: 0 0 5px black;
-  font-size: 2.75vmax;
+  font-size: 2.25vmax;
 }
 
 .header-lead {
