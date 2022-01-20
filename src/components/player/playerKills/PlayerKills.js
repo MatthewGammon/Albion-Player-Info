@@ -37,11 +37,15 @@ export default function PlayerKills() {
             {kill.Victim.Name}
           </Link>
         </td>
-        <td>{separator(kill.TotalVictimKillFame)}</td>
-        <td>{kill.Victim.GuildName || 'none'}</td>
-        <td>{kill.Victim.AllianceName || 'none'}</td>
-        <td>{Math.floor(kill.Killer.AverageItemPower)}</td>
-        <td>{Math.floor(kill.Victim.AverageItemPower)}</td>
+        <td className="killer-fame">{separator(kill.TotalVictimKillFame)}</td>
+        <td className="guild-name">{kill.Victim.GuildName || 'none'}</td>
+        <td className="alliance-name">{kill.Victim.AllianceName || 'none'}</td>
+        <td className="killer-ip">
+          {Math.floor(kill.Killer.AverageItemPower)}
+        </td>
+        <td className="victim-ip">
+          {Math.floor(kill.Victim.AverageItemPower)}
+        </td>
       </tr>
     ));
   }
@@ -66,10 +70,10 @@ export default function PlayerKills() {
         <tr className="kills-headers">
           <th>Victim</th>
           <th>Kill Fame</th>
-          <th>Guild</th>
-          <th>Alliance</th>
-          <th>Killer's IP</th>
-          <th>Victim's IP</th>
+          <th className="guild-name">Guild</th>
+          <th className="alliance-name">Alliance</th>
+          <th className="killer-ip">Killer's IP</th>
+          <th className="victim-ip">Victim's IP</th>
         </tr>
         {content}
       </table>

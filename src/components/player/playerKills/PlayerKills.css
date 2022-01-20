@@ -3,14 +3,22 @@ table {
 }
 
 .recent-kills {
-  width: 80%;
   text-align: center;
   overflow-x: auto;
   margin: 0 auto;
+  height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #0173a0,
+    #016c9a,
+    #036494,
+    #075d8e,
+    #0b5688
+  );
 }
 
 .kills-content {
-  background-color: rgb(11, 86, 136);
+  background-color: #0b5688;
   overflow: scroll;
   margin: 0 auto;
 }
@@ -20,22 +28,22 @@ table {
 }
 
 .player-kills-header {
-  background-color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.836);
+  background-color: rgba(0, 0, 0, 0.363);
   color: white;
   font-weight: 900;
   text-align: center;
-  margin: 2em 0em;
-  padding: 1em;
+  padding: 2vmin;
+  margin: 2em auto;
 }
 
-.player-kills-header h1 {
-  font-size: 2.25vmin;
+.player-kills-header h2 {
+  margin: 0;
 }
 
 .kills-headers th {
-  font-size: 1.5vmin;
-  background-color: black;
-  color: white;
+  font-size: 1.5rem;
+  color: black;
   padding: 0.75em;
 }
 
@@ -44,23 +52,24 @@ table {
 }
 
 .kills-content tr:nth-child(even) {
-  background-color: rgb(1, 115, 160);
+  background-color: #0173a0;
 }
 
 .kills-content td {
-  font-size: 1.5vmin;
+  font-size: 1.25rem;
   font-weight: 500;
   color: white;
   padding: 1em;
 }
 
 .kills-content tr:hover td {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.699);
 }
 
 .kill-link {
-  font-size: 1.5vmin;
+  font-size: 1.25rem;
   color: white;
+  text-decoration: none;
 }
 
 .kill-link a:hover {
@@ -72,30 +81,65 @@ table {
 }
 
 .kill-link a:focus {
-  background-color: black;
+  background-color: rgb(136, 38, 38);
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1100px) {
   .recent-kills {
-    width: 90%;
+    text-align: start;
+  }
+
+  .kills-headers th {
+    font-size: 1.35rem;
+  }
+
+  .kills-headers th,
+  .recent-kills td {
+    padding: 0.5em;
+  }
+
+  .kills-content td {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .kill-link {
+    font-size: 1rem;
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .recent-kills {
-    width: 95%;
+@media only screen and (max-width: 873px) {
+  .recent-kills th {
+    padding: 0.25em;
+  }
+
+  .kills-headers th {
+    font-size: 1.125rem;
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 420px) {
+  .recent-kills th,
+  .recent-kills td {
+    padding: 0.5em;
+  }
+
+  .kills-headers th {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
   .player-kills-header {
-    margin: 0;
+    padding: 0.5em;
   }
-}
 
-@media only screen and (max-width: 660px) {
-  .recent-kills {
-    width: 100%;
-    font-size: 1vmin;
+  .player-kills-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .alliance-name,
+  .killer-ip,
+  .victim-ip {
+    display: none;
   }
 }
