@@ -27,7 +27,7 @@ export default function PlayerDeaths() {
       <tr key={index} className="death-info">
         <td>
           <Link
-            className="death-link killer"
+            className="death-link"
             to={{
               pathname: `/event/${death.EventId}`,
             }}
