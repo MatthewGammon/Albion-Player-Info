@@ -65,15 +65,17 @@ export default function PlayerDeaths() {
       </div>
 
       <table className="deaths-content">
-        <tr className="deaths-headers">
-          <th>Killer</th>
-          <th>Fame</th>
-          <th className="guild-name">Guild</th>
-          <th className="alliance-name">Alliance</th>
-          <th className="killer-ip">Killer's IP</th>
-          <th className="victim-ip">Victim's IP</th>
-        </tr>
-        {content}
+        <tbody>
+          <tr className="deaths-headers">
+            <th>Killer</th>
+            <th>Fame</th>
+            <th className="guild-name">Guild</th>
+            <th className="alliance-name">Alliance</th>
+            <th className="killer-ip">Killer's IP</th>
+            <th className="victim-ip">Victim's IP</th>
+          </tr>
+          {content}
+        </tbody>
       </table>
     </main>
   );
