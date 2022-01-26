@@ -5,16 +5,6 @@ export default function PlayerGear({ player }) {
   const spriteBaseUrl = `${baseUrl}/items`;
   const gear = player.Equipment;
 
-  const gearTypes = Object.keys(gear);
-
-  const gearArray = [];
-  for (const type of gearTypes) {
-    gearArray.push({
-      gear: gear[type]?.Type,
-      quality: gear[type]?.Quality,
-    });
-  }
-
   return (
     <div className="player-gear">
       <div className="bag">
