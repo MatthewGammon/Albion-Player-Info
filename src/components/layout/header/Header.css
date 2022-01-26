@@ -37,9 +37,8 @@
 }
 
 .navbar a:hover {
-  background-color: rgb(1, 115, 160);
+  background-color: rgb(28, 157, 207);
   color: white;
-  border-radius: 10px;
 }
 
 .navbar a:active {
