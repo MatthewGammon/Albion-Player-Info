@@ -34,7 +34,13 @@ export default function Home() {
       setPlayerInfo(playerData);
       setIsLoading(false);
     } catch (error) {
-      setPlayerInfoError(error);
+      if (error.name === 'AbortError') {
+        setPlayerInfoError(
+          new Error(`The request has timed out. Please try again.`)
+        );
+      } else {
+        setPlayerInfoError(error);
+      }
       setIsLoading(false);
     }
   }
