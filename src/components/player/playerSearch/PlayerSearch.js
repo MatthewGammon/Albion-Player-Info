@@ -32,7 +32,6 @@ export default function Home() {
       );
       const playerData = await response.json();
       setPlayerInfo(playerData);
-      setIsLoading(false);
     } catch (error) {
       if (error.name === 'AbortError') {
         setPlayerInfoError(
@@ -41,6 +40,7 @@ export default function Home() {
       } else {
         setPlayerInfoError(error);
       }
+    } finally {
       setIsLoading(false);
     }
   }

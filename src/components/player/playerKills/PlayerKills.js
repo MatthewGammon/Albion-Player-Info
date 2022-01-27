@@ -4,24 +4,31 @@ import Spinner from 'react-bootstrap/Spinner';
 import './PlayerKills.css';
 import { baseUrl } from '../../../utils/api';
 import { separator } from '../../../utils/numbers';
+import ErrorAlert from '../../layout/errors/ErrorAlert';
 
 export default function PlayerKills() {
   const [killsData, setKillsData] = useState(null);
   const [isLoading, setIsLoading] = useState();
+  const [killsError, setKillsError] = useState(null);
 
   const { playerId, playerName } = useParams();
 
-  useEffect(loadData, [playerId]);
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`${baseUrl}/players/${playerId}/kills`);
+        const killsData = await response.json();
+        setKillsData(killsData);
+      } catch (error) {
+        setKillsError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
-  function loadData() {
-    setIsLoading(true);
-    const abortController = new AbortController();
-    fetch(`${baseUrl}/players/${playerId}/kills`, abortController.signal)
-      .then((res) => res.json())
-      .then(setKillsData)
-      .then(() => setIsLoading(false));
-    return () => abortController.abort();
-  }
+    loadData();
+  }, [playerId]);
 
   let content;
   if (killsData) {
@@ -52,6 +59,9 @@ export default function PlayerKills() {
 
   return (
     <main className="recent-kills">
+      <div className="player-kills-header">
+        <h1>{playerName}'s Most Recent Kills</h1>
+      </div>
       {isLoading ? (
         <div className="loading-kills">
           <h2>Loading</h2>
@@ -59,26 +69,25 @@ export default function PlayerKills() {
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         </div>
+      ) : killsData ? (
+        <table className="kills-content">
+          <tbody>
+            <tr className="kills-headers">
+              <th>Victim</th>
+              <th>Kill Fame</th>
+              <th className="guild-name">Guild</th>
+              <th className="alliance-name">Alliance</th>
+              <th className="killer-ip">Killer's IP</th>
+              <th className="victim-ip">Victim's IP</th>
+            </tr>
+            {content}
+          </tbody>
+        </table>
       ) : (
-        ''
+        <div className="error-alert">
+          <ErrorAlert error={killsError} />
+        </div>
       )}
-      <div className="player-kills-header">
-        <h1>{playerName}'s Most Recent Kills</h1>
-      </div>
-
-      <table className="kills-content">
-        <tbody>
-          <tr className="kills-headers">
-            <th>Victim</th>
-            <th>Kill Fame</th>
-            <th className="guild-name">Guild</th>
-            <th className="alliance-name">Alliance</th>
-            <th className="killer-ip">Killer's IP</th>
-            <th className="victim-ip">Victim's IP</th>
-          </tr>
-          {content}
-        </tbody>
-      </table>
     </main>
   );
 }
