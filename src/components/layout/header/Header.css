@@ -2,8 +2,7 @@
   background-color: rgb(3, 87, 121);
   color: rgba(255, 255, 255, 0.89);
   margin: 0 auto;
-  padding: 1em;
-  font-size: 2vmax;
+  padding: 2.5em;
   text-align: center;
 }
 
@@ -11,12 +10,12 @@
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   text-shadow: 0 0 5px black;
-  font-size: 2.25vmax;
+  font-size: 2.5rem;
 }
 
 .header-lead {
   text-shadow: 0 0 2px black;
-  font-size: 1.25vmax;
+  font-size: 1.75rem;
   margin: 0 auto;
 }
 
@@ -25,7 +24,7 @@
   justify-content: flex-start;
   background-color: white;
   margin-top: 0em;
-  padding: 0em 0.25em;
+  padding: 0.5em;
 }
 
 .navbar a {
@@ -33,7 +32,7 @@
   color: black;
   text-align: center;
   padding: 0.25em 0.5em;
-  font-size: 1.5em;
+  font-size: 1.25rem;
 }
 
 .navbar a:hover {
@@ -46,6 +45,16 @@
   color: rgb(1, 115, 160);
 }
 
+@media only screen and (max-width: 900px) {
+  .header-text {
+    font-size: 2rem;
+  }
+
+  .header-lead {
+    font-size: 1.25rem;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .navbar {
     justify-content: space-between;
@@ -54,5 +63,14 @@
 
   .navbar a {
     padding: 0.25em;
+    font-size: 1rem;
+  }
+
+  .header-text {
+    font-size: 1.5rem;
+  }
+
+  .header-lead {
+    font-size: 1rem;
   }
 }
