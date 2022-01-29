@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CharacterSelect from '../characterSelect/CharacterSelect';
 import './Header.css';
 
 function Header() {
@@ -13,13 +14,15 @@ function Header() {
         </p>
       </div>
       <nav className="navbar">
-        <Link className="nav-link" to="/home">
-          Home
-        </Link>
-
-        <Link className="nav-link" to="/playerSearch">
-          Search
-        </Link>
+        <div className="navbar-links">
+          <Link className="nav-link" to="/home">
+            Home
+          </Link>
+          <Link className="nav-link" to="/playerSearch">
+            Search
+          </Link>
+        </div>
+        <CharacterSelect />
       </nav>
     </>
   );
