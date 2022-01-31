@@ -1,10 +1,11 @@
 import { React } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { baseUrl, fetchWithTimeout } from '../../../utils/api';
+import { getPlayerId } from '../../../utils/api';
 import './CharacterSelect.css';
 
 export default function CharacterSelect() {
   const history = useHistory();
+
   const characters = [
     'CynicalEntity',
     'NinShika',
@@ -22,13 +23,9 @@ export default function CharacterSelect() {
     </option>
   ));
 
-  async function handleSubmit(event) {
+  async function handleChange(event) {
     try {
-      const response = await fetchWithTimeout(
-        `${baseUrl}/search?q=${event.target.value}`
-      );
-      const playerInfo = await response.json();
-      const playerId = playerInfo.players[0].Id;
+      const playerId = await getPlayerId(event.target.value);
       history.push(`/userProfile/${playerId}`);
     } catch (error) {
       console.error(error);
@@ -38,7 +35,7 @@ export default function CharacterSelect() {
   return (
     <form className="character-select-form">
       <label htmlFor="character-select"></label>
-      <select name="characters" id="character-select" onChange={handleSubmit}>
+      <select name="characters" id="character-select" onChange={handleChange}>
         {options}
       </select>
     </form>
