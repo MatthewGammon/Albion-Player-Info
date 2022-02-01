@@ -5,22 +5,33 @@ import './PlayerId.css';
 
 export default function PlayerId({ playerInfo }) {
   if (playerInfo && playerInfo.players.length !== 0) {
-    const playerId = playerInfo.players[0].Id;
+    const players = playerInfo.players;
+
+    const playerLinks = players.map((player, index) => (
+      <tr key={index} className="player-results">
+        <td className="player-links">
+          <Link to={{ pathname: `/userProfile/${player.Id}` }}>
+            {player.Name}
+          </Link>
+        </td>
+        <td className="player-guild">{player.GuildName || 'no guild'}</td>
+      </tr>
+    ));
 
     return (
-      <div className="playerInfo mt-3 p-3 text-center bg-info text-dark">
-        <h2>Success!</h2>
-        <h3>Your Albion Online player id is: {playerId}</h3>
-        <div>
-          <Link
-            to={{
-              pathname: `/userProfile/${playerId}`,
-            }}
-          >
-            View My Profile
-          </Link>
-        </div>
-      </div>
+      <>
+        <hr className="search-separator" />
+
+        <table className="results-table">
+          <tbody>
+            <tr className="results-headers">
+              <th>Name</th>
+              <th>Guild</th>
+            </tr>
+            {playerLinks}
+          </tbody>
+        </table>
+      </>
     );
   } else {
     return <PlayerNotFound playerInfo={playerInfo} />;

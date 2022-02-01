@@ -46,17 +46,16 @@ export default function Home() {
   }
 
   return (
-    <main
-      className="form d-flex flex-column align-items-center p-4 bg-dark text-light"
-      style={{ backgroundColor: 'white' }}
-    >
-      <h3>Enter Your Character's Name</h3>
+    <main className="search-form">
+      <div>
+        <h3>Search for your Character</h3>
+      </div>
       <form onSubmit={handleSubmit}>
-        <label className="mt-4" htmlFor="name">
+        <label className="search-label" htmlFor="name">
           Name:
         </label>
         <input
-          className="m-2"
+          className="search-input"
           id="name"
           name="name"
           type="text"
@@ -65,7 +64,7 @@ export default function Home() {
           value={userName.name}
           required={true}
         />
-        <button className="btn-primary" type="submit">
+        <button className="button" type="submit">
           Submit
         </button>
       </form>
