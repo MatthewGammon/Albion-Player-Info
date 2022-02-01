@@ -1,26 +1,15 @@
-table {
-  width: 100%;
-}
-
 .recent-deaths {
   text-align: center;
+  width: 80%;
   overflow-x: auto;
-  margin: 0 auto;
-  height: 100vh;
-  background-image: linear-gradient(
-    to right top,
-    #0173a0,
-    #016c9a,
-    #036494,
-    #075d8e,
-    #0b5688
-  );
+  margin: 2em auto 5.5em;
+  box-shadow: 0px 5px 10px rgb(0 0 0 / 0.5);
 }
 
 .deaths-content {
+  width: 100%;
   background-color: #0b5688;
   overflow: scroll;
-  margin: 0 auto;
 }
 
 .loading-deaths {
@@ -28,27 +17,23 @@ table {
 }
 
 .player-deaths-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.836);
-  background-color: rgba(0, 0, 0, 0.363);
+  text-shadow: 2px 2px #000000;
+  background-color: #0b5688;
   color: white;
   font-weight: 900;
   text-align: center;
   padding: 2vmin;
-  margin: 2em auto;
-}
-
-.player-deaths-header h2 {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .deaths-headers th {
   font-size: 1.5rem;
-  color: black;
+  color: white;
   padding: 0.75em;
 }
 
-.deaths-content tr {
-  border: 1px solid black;
+.deaths-content tr:first-child {
+  background-color: rgb(7, 43, 68);
 }
 
 .deaths-content tr:nth-child(even) {
@@ -63,7 +48,7 @@ table {
 }
 
 .deaths-content tr:hover td {
-  background-color: rgba(0, 0, 0, 0.699);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .death-link {
@@ -72,21 +57,17 @@ table {
   text-decoration: none;
 }
 
-.death-link a:hover {
+.death-link:hover {
   color: rgb(1, 115, 160);
-}
-
-.death-link a:active {
-  text-decoration: none;
-}
-
-.death-link a:focus {
-  background-color: rgb(136, 38, 38);
+  text-decoration: underline;
+  text-shadow: 0 0 0.01px black;
 }
 
 @media only screen and (max-width: 1100px) {
   .recent-deaths {
     text-align: start;
+    width: 100%;
+    margin-top: 0em;
   }
 
   .deaths-headers th {
