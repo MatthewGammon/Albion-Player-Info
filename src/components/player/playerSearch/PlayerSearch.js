@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <main className="search-form">
-      <div>
+      <div className="form-header">
         <h3>Search for your Character</h3>
       </div>
       <form onSubmit={handleSubmit}>
