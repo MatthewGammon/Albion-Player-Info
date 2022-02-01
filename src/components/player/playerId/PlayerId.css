@@ -10,9 +10,10 @@
 
 .player-links a {
   text-decoration: none;
-  color: rgb(3, 87, 121);
 }
 
 .player-links a:hover {
+  color: rgb(1, 115, 160);
   text-decoration: underline;
+  text-shadow: 0 0 0.01px black;
 }
