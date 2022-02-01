@@ -35,7 +35,15 @@ export default function CharacterSelect() {
   return (
     <form className="character-select-form">
       <label htmlFor="character-select"></label>
-      <select name="characters" id="character-select" onChange={handleChange}>
+      <select
+        name="characters"
+        id="character-select"
+        defaultValue={'default'}
+        onChange={handleChange}
+      >
+        <option value="default" disabled hidden>
+          Character
+        </option>
         {options}
       </select>
     </form>
