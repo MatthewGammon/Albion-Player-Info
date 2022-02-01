@@ -10,7 +10,7 @@
   border-radius: 10px;
 }
 
-.search-form h3 {
+.form-header h3 {
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -28,7 +28,6 @@
   padding: 0.5em 1.5em;
   margin: 0.5em;
   border-radius: 5px;
-
   background-color: #0173a0;
   color: white;
 }
