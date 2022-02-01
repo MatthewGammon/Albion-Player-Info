@@ -36,8 +36,9 @@
 }
 
 .navbar a:hover {
-  background-color: rgb(28, 157, 207);
-  color: white;
+  color: rgb(1, 115, 160);
+  text-decoration: underline;
+  text-shadow: 0 0 0.01px black;
 }
 
 .navbar a:active {
