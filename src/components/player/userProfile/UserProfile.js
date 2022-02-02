@@ -40,7 +40,7 @@ export default function UserProfile() {
   }
 
   return playerData ? (
-    <main className="player-info d-flex justify-content-center">
+    <main className="player-info ">
       <div className="card">
         <div className="ring-avatar">
           {!isDom && (

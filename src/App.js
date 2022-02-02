@@ -15,40 +15,40 @@ import './App.css';
 
 export default function App() {
   return (
-    <div className="app">
-      <div className="main">
-        <Header />
-        <Footer />
+    <>
+      <Header />
+      <div className="app">
+        <Switch>
+          <Route exact={true} path="/">
+            <Redirect to={'/home'} />
+          </Route>
+          <Route exact={true} path="/userProfile/:playerId">
+            <UserProfile />
+          </Route>
+          <Route exact={true} path="/playerId">
+            <PlayerId />
+          </Route>
+          <Route path="/playerSearch">
+            <PlayerSearch />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/playerKills/:playerName/:playerId">
+            <PlayerKills />
+          </Route>
+          <Route path="/playerDeaths/:playerName/:playerId">
+            <PlayerDeaths />
+          </Route>
+          <Route path="/event/:eventId">
+            <BattleEvent />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
       </div>
-      <Switch>
-        <Route exact={true} path="/">
-          <Redirect to={'/home'} />
-        </Route>
-        <Route exact={true} path="/userProfile/:playerId">
-          <UserProfile />
-        </Route>
-        <Route exact={true} path="/playerId">
-          <PlayerId />
-        </Route>
-        <Route path="/playerSearch">
-          <PlayerSearch />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/playerKills/:playerName/:playerId">
-          <PlayerKills />
-        </Route>
-        <Route path="/playerDeaths/:playerName/:playerId">
-          <PlayerDeaths />
-        </Route>
-        <Route path="/event/:eventId">
-          <BattleEvent />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-    </div>
+      <Footer />
+    </>
   );
 }

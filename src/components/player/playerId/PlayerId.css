@@ -4,6 +4,14 @@
   background-color: rgb(1, 115, 160);
 }
 
+.results-table {
+  width: 100%;
+}
+
+.results-table td {
+  max-width: 50%;
+}
+
 .results-table tr {
   color: black;
 }
