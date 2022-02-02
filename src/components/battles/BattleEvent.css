@@ -98,12 +98,13 @@
     order: 1;
   }
 
-  p {
+  .event-info p {
     font-size: 1rem;
     margin-bottom: 0em;
   }
 
-  h4 {
+  .killer-info h4,
+  .victim-info h4 {
     font-size: 1.5rem;
   }
 }
