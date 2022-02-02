@@ -1,16 +1,10 @@
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   background-color: rgb(3, 87, 121);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
   color: white;
-  padding: 2em 0.75em 0.75em;
+  padding: 2em 5em;
 }
 
 .footer-about-header,
@@ -20,11 +14,19 @@
   text-transform: uppercase;
 }
 
+.footer-about {
+  max-width: 40%;
+}
+
+.footer-community,
+.footer-contact {
+  max-width: 25%;
+}
+
 .footer-about,
 .footer-community,
 .footer-contact {
   font-size: 0.75rem;
-  max-width: 20%;
   padding: 1em;
 }
 
@@ -48,17 +50,26 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .footer-content {
+  .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2em 0.5em;
+  }
+
+  .footer p {
+    margin-bottom: 0em;
   }
 
   .footer-about,
   .footer-community,
   .footer-contact {
     text-align: center;
-    max-width: 80%;
-    padding: 0.5em;
+    max-width: 100%;
+    padding: 1em 0em;
+  }
+
+  .footer-contact p {
+    margin-bottom: 1em;
   }
 }
