@@ -64,8 +64,8 @@ export default function Home() {
           value={userName.name}
           required={true}
         />
-        <button className="button" type="submit">
-          Submit
+        <button className="search-button" type="submit">
+          Search
         </button>
       </form>
 

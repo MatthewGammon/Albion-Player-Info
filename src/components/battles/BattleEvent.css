@@ -24,12 +24,8 @@
   font-weight: bold;
 }
 
-p {
-  margin-bottom: 0.5em;
-  font-size: 1.5vmin;
-}
-
-h4 {
+.killer-info h4,
+.victim-info h4 {
   color: white;
   font-size: 2vmin;
 }
@@ -52,6 +48,8 @@ h4 {
 }
 
 .event-info p {
+  margin-bottom: 0.5em;
+  font-size: 1.5vmin;
   font-weight: 500;
 }
 

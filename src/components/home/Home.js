@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import './Home.css';
 
 export default function Home() {
   const history = useHistory();
@@ -8,19 +9,23 @@ export default function Home() {
   };
 
   return (
-    <div className="form d-flex flex-column align-items-center bg-dark text-light p-3">
-      <div className="text-center">
-        <p>This application is still a work in progress.</p>
+    <div className="app-disclaimer">
+      <div className="disclaimer-text">
+        <h3 className="disclaimer-header">
+          Thanks for visiting Albion Player Info and Regear!
+        </h3>
         <p>
-          Feel free to poke around. There is some base functionality for viewing
-          limited player data, but many features are yet to be completed or
-          implemented.
+          Feel free to poke around and check out the currently available
+          features. <br />
+          This app is still in development and you will find that not all
+          features have been completed or implemented.
         </p>
-        <p>Styling will come after all functionality is in place.</p>
+        <p>Please feel free to reach out with any feedback or suggestions!</p>
+
+        <button className="search-button" type="button" onClick={handleClick}>
+          Search For Your Character
+        </button>
       </div>
-      <button className="btn btn-primary" type="button" onClick={handleClick}>
-        Search For Your Character
-      </button>
     </div>
   );
 }
