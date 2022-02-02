@@ -22,15 +22,17 @@ export default function PlayerId({ playerInfo }) {
       <>
         <hr className="search-separator" />
 
-        <table className="results-table">
-          <tbody>
-            <tr className="results-headers">
-              <th>Name</th>
-              <th>Guild</th>
-            </tr>
-            {playerLinks}
-          </tbody>
-        </table>
+        <div className="search-results">
+          <table className="results-table">
+            <tbody>
+              <tr className="results-headers">
+                <th>Name</th>
+                <th>Guild</th>
+              </tr>
+              {playerLinks}
+            </tbody>
+          </table>
+        </div>
       </>
     );
   } else {
