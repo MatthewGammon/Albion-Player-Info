@@ -1,19 +1,14 @@
-html {
-  height: 100%;
-  position: relative;
+html,
+body,
+#root,
+.app {
+  min-height: 100vh;
 }
 
 .app {
-  min-height: 100vh;
   overflow: hidden;
   display: block;
   position: relative;
   background-color: rgb(1, 115, 160);
-  padding-bottom: 100px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  padding-bottom: 5em;
 }
