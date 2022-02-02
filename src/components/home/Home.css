@@ -1,3 +1,39 @@
-.form {
-  height: 500px;
+.app-disclaimer {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  text-align: center;
+  width: 50%;
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 1.5em;
+  border-radius: 10px;
+}
+
+.disclaimer-header {
+  padding: 1em;
+  margin-bottom: 0em;
+}
+
+.disclaimer-text p {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+@media only screen and (max-width: 900px) {
+  .app-disclaimer {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-disclaimer {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .app-disclaimer {
+    width: 100%;
+  }
 }
