@@ -1,7 +1,6 @@
 import { React } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { getPlayerId } from '../../../utils/api';
-import './CharacterSelect.css';
 
 export default function CharacterSelect() {
   const history = useHistory();
@@ -26,26 +25,23 @@ export default function CharacterSelect() {
   async function handleChange(event) {
     try {
       const playerId = await getPlayerId(event.target.value);
-      history.push(`/userProfile/${playerId}`);
+      history.push(`/user-profile/${playerId}`);
     } catch (error) {
       console.error(error);
     }
   }
 
   return (
-    <form className="character-select-form">
-      <label htmlFor="character-select"></label>
-      <select
-        name="characters"
-        id="character-select"
-        defaultValue={'default'}
-        onChange={handleChange}
-      >
-        <option value="default" disabled hidden>
-          Character
-        </option>
-        {options}
-      </select>
-    </form>
+    <select
+      name="characters"
+      id="character-select"
+      defaultValue={'default'}
+      onChange={handleChange}
+    >
+      <option value="default" disabled hidden>
+        Character
+      </option>
+      {options}
+    </select>
   );
 }
