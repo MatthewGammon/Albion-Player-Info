@@ -74,14 +74,14 @@ export default function UserProfile() {
         <div className="links">
           <Link
             to={{
-              pathname: `/playerKills/${playerData.Name}/${playerId}`,
+              pathname: `/kills/${playerData.Name}/${playerId}`,
             }}
           >
             Recent Kills
           </Link>
           <Link
             to={{
-              pathname: `/playerDeaths/${playerData.Name}/${playerId}`,
+              pathname: `/deaths/${playerData.Name}/${playerId}`,
             }}
           >
             Recent Deaths

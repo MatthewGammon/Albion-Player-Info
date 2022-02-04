@@ -5,7 +5,7 @@ import './Home.css';
 export default function Home() {
   const history = useHistory();
   const handleClick = () => {
-    history.push('/playerSearch');
+    history.push('/search');
   };
 
   return (
