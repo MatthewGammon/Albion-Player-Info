@@ -22,22 +22,22 @@ export default function App() {
           <Route exact={true} path="/">
             <Redirect to={'/home'} />
           </Route>
-          <Route exact={true} path="/userProfile/:playerId">
+          <Route exact={true} path="/user-profile/:playerId">
             <UserProfile />
           </Route>
           <Route exact={true} path="/playerId">
             <PlayerId />
           </Route>
-          <Route path="/playerSearch">
+          <Route path="/search">
             <PlayerSearch />
           </Route>
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/playerKills/:playerName/:playerId">
+          <Route path="/kills/:playerName/:playerId">
             <PlayerKills />
           </Route>
-          <Route path="/playerDeaths/:playerName/:playerId">
+          <Route path="/deaths/:playerName/:playerId">
             <PlayerDeaths />
           </Route>
           <Route path="/event/:eventId">

@@ -10,7 +10,7 @@ export default function PlayerId({ playerInfo }) {
     const playerLinks = players.map((player, index) => (
       <tr key={index} className="player-results">
         <td className="player-links">
-          <Link to={{ pathname: `/userProfile/${player.Id}` }}>
+          <Link to={{ pathname: `/user-profile/${player.Id}` }}>
             {player.Name}
           </Link>
         </td>
