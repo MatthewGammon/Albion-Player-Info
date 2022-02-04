@@ -42,8 +42,10 @@ export default function BattleEvent() {
         <div className="event">
           <div className="killer-info">
             <h4>
-              {killer} [{eventData.Killer.GuildName}]
+              <a href={`/user-profile/${eventData.Killer.Id}`}>{killer}</a> [
+              {eventData.Killer.GuildName}]
             </h4>
+
             <h4>{Math.floor(eventData.Killer.AverageItemPower)}</h4>
             <PlayerGear player={eventData.Killer} />
           </div>
@@ -61,7 +63,8 @@ export default function BattleEvent() {
 
           <div className="victim-info">
             <h4>
-              {victim} [{eventData.Victim.GuildName}]
+              <a href={`/user-profile/${eventData.Victim.Id}`}> {victim}</a> [
+              {eventData.Victim.GuildName}]
             </h4>
             <h4>{Math.floor(eventData.Victim.AverageItemPower)}</h4>
 

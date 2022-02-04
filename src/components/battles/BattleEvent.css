@@ -10,6 +10,17 @@
   width: 30%;
 }
 
+.killer-info a,
+.victim-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.killer-info a:hover,
+.victim-info a:hover {
+  text-decoration: underline;
+}
+
 .killer-info::before {
   content: 'KILLER';
 }
