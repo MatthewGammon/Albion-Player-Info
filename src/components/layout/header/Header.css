@@ -24,10 +24,14 @@
   overflow: hidden;
 }
 
+.character-select {
+  padding: 0.9em;
+}
+
 .topnav a {
   color: #0b5688;
   text-decoration: none;
-  font-weight: 500;
+  padding: 1em;
 }
 
 .topnav a,
@@ -35,7 +39,6 @@
   float: left;
   display: block;
   font-size: 1.25rem;
-  padding: 1em;
 }
 
 .topnav a:hover {
