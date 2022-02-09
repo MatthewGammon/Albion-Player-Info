@@ -9,7 +9,7 @@
 }
 
 .results-table td {
-  max-width: 50%;
+  width: 50%;
 }
 
 .results-table tr {
