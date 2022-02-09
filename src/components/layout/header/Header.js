@@ -32,10 +32,14 @@ function Header() {
       </div>
 
       <div className="header">
-        <h1 className="header-text">Albion Online Player Info and Regear</h1>
-        <p className="header-lead">
-          See your stats and submit regear requests!
-        </p>
+        <div className="header-text">
+          <h1 className="header-primary">
+            Albion Online Player Info and Regear
+          </h1>
+          <p className="header-lead">
+            See your stats and submit regear requests!
+          </p>
+        </div>
       </div>
     </>
   );
