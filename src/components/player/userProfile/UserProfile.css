@@ -4,6 +4,10 @@
   margin-top: 2em;
 }
 
+.player-info .card {
+  border-radius: 10px;
+}
+
 .card-body {
   text-align: center;
 }
