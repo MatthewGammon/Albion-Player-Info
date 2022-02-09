@@ -12,6 +12,7 @@
 .footer-contact-header {
   font-size: 1rem;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 .footer-about {
@@ -26,7 +27,7 @@
 .footer-about,
 .footer-community,
 .footer-contact {
-  font-size: 0.675rem;
+  font-size: 0.75rem;
   padding: 1em;
 }
 
@@ -51,6 +52,12 @@
   color: rgb(34, 184, 243);
   text-decoration: underline;
   text-shadow: 0 0 0.01px rgb(0, 0, 0);
+}
+
+.linked-in {
+  background: white;
+  border-radius: 5px;
+  padding: 0em;
 }
 
 @media only screen and (max-width: 850px) {
