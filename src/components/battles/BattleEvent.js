@@ -13,9 +13,13 @@ export default function BattleEvent() {
   const { eventId } = useParams();
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const { signal } = abortController;
     async function loadKill() {
       try {
-        const response = await fetch(`${baseUrl}/events/${eventId}`);
+        const response = await fetch(`${baseUrl}/events/${eventId}`, {
+          signal,
+        });
         const eventData = await response.json();
         setEventData(eventData);
       } catch (error) {
@@ -24,17 +28,13 @@ export default function BattleEvent() {
     }
 
     loadKill();
+    return () => abortController.abort();
   }, [eventId]);
 
-  let killer, victim, killDate;
-
-  if (eventData) {
-    killer = eventData.Killer.Name;
-    victim = eventData.Victim.Name;
-
-    killDate =
-      new Date(eventData.TimeStamp).toUTCString().slice(0, 22) + ' UTC';
-  }
+  const killer = eventData?.Killer.Name;
+  const victim = eventData?.Victim.Name;
+  let killDate = eventData?.TimeStamp;
+  killDate = new Date(killDate).toUTCString().slice(0, 22) + ' UTC';
 
   return (
     <>
@@ -68,7 +68,13 @@ export default function BattleEvent() {
             </h4>
             <h4>{Math.floor(eventData.Victim.AverageItemPower)}</h4>
 
-            <PlayerGear player={eventData.Victim} />
+            <PlayerGear
+              player={eventData.Victim}
+              inventory={eventData.Victim.Inventory}
+            />
+            <div className="regear-button">
+              <button>Submit Regear</button>
+            </div>
           </div>
         </div>
       ) : (
