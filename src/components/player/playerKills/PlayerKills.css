@@ -17,12 +17,12 @@
 }
 
 .player-kills-header {
-  text-shadow: 1px 1px #000000;
+  text-shadow: 2px 2px #000000;
   background-color: #0b5688;
   color: white;
   font-weight: 900;
   text-align: center;
-  padding: 4em;
+  padding: 2vmin;
   margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@
   }
 
   .player-kills-header {
-    display: none;
+    padding: 1.5em;
   }
 
   .kills-headers th {
@@ -99,24 +99,12 @@
     padding: 0.25em;
   }
 
-  .kills-content {
-    margin: 0 auto;
-  }
-
   .kills-headers th {
     font-size: 1.125rem;
   }
 }
 
 @media only screen and (max-width: 420px) {
-  .recent-kills {
-    width: 95%;
-  }
-
-  .kills-content {
-    margin-top: 3em;
-  }
-
   .recent-kills th,
   .recent-kills td {
     padding: 0.5em 0.25em;
@@ -126,6 +114,14 @@
     font-size: 1rem;
     white-space: nowrap;
     width: 20%;
+  }
+
+  .player-kills-header {
+    padding: 1.25em;
+  }
+
+  .player-kills-header h2 {
+    font-size: 1.5em;
   }
 
   .alliance-name,
