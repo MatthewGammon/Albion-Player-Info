@@ -60,7 +60,7 @@ export default function PlayerKills() {
   return (
     <main className="recent-kills">
       <div className="player-kills-header">
-        <h1>{playerName}'s Most Recent Kills</h1>
+        <h3>{playerName}'s Most Recent Kills</h3>
       </div>
       {isLoading ? (
         <div className="loading-kills">
