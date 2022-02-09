@@ -26,11 +26,15 @@
 .footer-about,
 .footer-community,
 .footer-contact {
-  font-size: 0.75rem;
+  font-size: 0.675rem;
   padding: 1em;
 }
 
-.footer-contact p {
+.footer-community {
+  text-transform: uppercase;
+}
+
+.footer-contact a {
   text-align: start;
 }
 
@@ -55,10 +59,6 @@
     flex-direction: column;
     align-items: center;
     padding: 2em 0.5em;
-  }
-
-  .footer p {
-    margin-bottom: 0em;
   }
 
   .footer-about,
