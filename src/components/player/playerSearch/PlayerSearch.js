@@ -46,11 +46,11 @@ export default function Home() {
   }
 
   return (
-    <main className="search-form">
+    <main className="search-content">
       <div className="form-header">
         <h3>Search for your Character</h3>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
         <label className="search-label" htmlFor="name">
           Name:
         </label>

@@ -65,6 +65,7 @@ export default function Footer() {
             />
           </a>
           <a
+            className="linked-in"
             href="https://www.linkedin.com/in/matthew--gammon/"
             target={'_blank'}
             rel="noreferrer"

@@ -1,21 +1,28 @@
 .header {
-  background-color: rgb(3, 87, 121);
+  min-height: 30vh;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../../assets/images/lands-awakened.jpeg');
+  background-size: cover;
   color: rgba(255, 255, 255, 0.89);
   margin: 0 auto;
-  padding: 2.5em;
-  text-align: center;
+  padding: 5.5em 5.5em 3em 5.5em;
 }
 
 .header-text {
+  margin: 0em auto;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 20%), 0 0 10px #000, 0 0 50px #000;
+}
+
+.header-primary {
   font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
   font-weight: bold;
-  text-shadow: 0 0 5px black;
-  font-size: 2.5rem;
 }
 
 .header-lead {
   text-shadow: 0 0 2px black;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin: 0 auto;
 }
 
@@ -36,9 +43,9 @@
 
 .topnav a,
 .character-select {
+  font-size: 1.25rem;
   float: left;
   display: block;
-  font-size: 1.25rem;
 }
 
 .topnav a:hover {
@@ -52,22 +59,18 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .header-text {
-    font-size: 2rem;
-  }
-
   .header-lead {
     font-size: 1.25rem;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .header-text {
-    font-size: 1.5rem;
+  .header-primary {
+    font-size: 2rem;
   }
 
-  .header-lead {
-    font-size: 1rem;
+  .header-text {
+    width: 100%;
   }
 
   .topnav a:not(:first-child),

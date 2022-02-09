@@ -12,6 +12,7 @@
 .footer-contact-header {
   font-size: 1rem;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 .footer-about {
@@ -30,7 +31,11 @@
   padding: 1em;
 }
 
-.footer-contact p {
+.footer-community {
+  text-transform: uppercase;
+}
+
+.footer-contact a {
   text-align: start;
 }
 
@@ -49,16 +54,18 @@
   text-shadow: 0 0 0.01px rgb(0, 0, 0);
 }
 
+.linked-in {
+  background: white;
+  border-radius: 5px;
+  padding: 0em;
+}
+
 @media only screen and (max-width: 850px) {
   .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2em 0.5em;
-  }
-
-  .footer p {
-    margin-bottom: 0em;
   }
 
   .footer-about,
