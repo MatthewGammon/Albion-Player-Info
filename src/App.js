@@ -16,8 +16,8 @@ import './App.css';
 export default function App() {
   return (
     <>
-      <Header />
       <div className="app">
+        <Header />
         <Switch>
           <Route exact={true} path="/">
             <Redirect to={'/home'} />
