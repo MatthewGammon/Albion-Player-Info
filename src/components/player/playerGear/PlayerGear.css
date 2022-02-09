@@ -6,3 +6,46 @@
 .mount {
   grid-column: 2/3;
 }
+
+.player-inventory {
+  margin: 1em auto;
+}
+
+.player-inventory-header h3 {
+  color: white;
+  font-size: 2vmin;
+}
+
+.inventory-item {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.item-count {
+  position: absolute;
+  display: block;
+  width: 20%;
+  bottom: 21%;
+  right: 15%;
+  color: #fff;
+  /* text-shadow: 0 1px 1px white; */
+  line-height: 12px;
+  font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 950px) {
+  .player-inventory {
+    width: 90%;
+  }
+
+  .player-inventory-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .inventory-item {
+    width: 75px;
+    height: 75px;
+  }
+}
