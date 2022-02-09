@@ -2,8 +2,7 @@
   background-color: rgb(3, 87, 121);
   color: rgba(255, 255, 255, 0.89);
   margin: 0 auto;
-  padding: 2.5em;
-  text-align: center;
+  padding: 5.5em;
 }
 
 .header-text {
@@ -25,20 +24,19 @@
 }
 
 .character-select {
-  padding: 0.9em;
+  padding: 0.4em;
 }
 
 .topnav a {
   color: #0b5688;
   text-decoration: none;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .topnav a,
 .character-select {
   float: left;
   display: block;
-  font-size: 1.25rem;
 }
 
 .topnav a:hover {
@@ -62,14 +60,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header-text {
-    font-size: 1.5rem;
-  }
-
-  .header-lead {
-    font-size: 1rem;
-  }
-
   .topnav a:not(:first-child),
   .topnav select {
     display: none;
@@ -102,5 +92,12 @@
 
   .topnav.responsive select {
     display: inline;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    padding-left: 3em;
+    padding-right: 3em;
   }
 }
