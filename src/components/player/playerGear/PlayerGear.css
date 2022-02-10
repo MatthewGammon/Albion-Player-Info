@@ -1,10 +1,72 @@
 .player-gear {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  background-image: url(../../../assets/images/official-gear.png);
+  padding: 0 0 108.333%;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 4em;
 }
 
-.mount {
-  grid-column: 2/3;
+.player-gear .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 25%;
+  height: auto;
+  min-height: 22%;
+}
+
+.player-gear .item.bag {
+  top: 6%;
+  left: 6%;
+}
+
+.player-gear .item.head {
+  top: 7.5%;
+  left: 37%;
+}
+
+.player-gear .item.cape {
+  top: 6%;
+  left: auto;
+  right: 6%;
+}
+
+.player-gear .item.main-hand {
+  top: 30%;
+  left: 11%;
+}
+
+.player-gear .item.chest {
+  top: 30%;
+  left: 37%;
+}
+
+.player-gear .item.off-hand {
+  top: 32%;
+  left: auto;
+  right: 11%;
+}
+
+.player-gear .item.potion {
+  top: 54.3%;
+  left: 6%;
+}
+
+.player-gear .item.boots {
+  top: 51.5%;
+  left: 37%;
+}
+
+.player-gear .item.food {
+  top: 54.3%;
+  left: auto;
+  right: 6%;
+}
+
+.player-gear .item.mount {
+  top: 73.5%;
+  left: 37%;
 }
 
 .player-inventory {
@@ -27,15 +89,18 @@
   position: absolute;
   display: block;
   width: 20%;
-  bottom: 21%;
+  bottom: 19%;
   right: 15%;
   color: #fff;
-  /* text-shadow: 0 1px 1px white; */
   line-height: 12px;
   font-size: 0.75rem;
 }
 
 @media only screen and (max-width: 950px) {
+  .player-gear {
+    margin-bottom: 0em;
+  }
+
   .player-inventory {
     width: 90%;
   }

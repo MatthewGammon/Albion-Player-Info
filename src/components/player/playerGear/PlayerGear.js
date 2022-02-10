@@ -32,7 +32,7 @@ export default function PlayerGear({ player, inventory }) {
   return (
     <div className="player-items">
       <div className="player-gear">
-        <div className="bag">
+        <div className="item bag">
           {gear.Bag && (
             <img
               src={`${spriteBaseUrl}/${gear.Bag.Type}/?quality=${gear.Bag.Quality}`}
@@ -42,7 +42,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="head">
+        <div className="item head">
           {gear.Head && (
             <img
               src={`${spriteBaseUrl}/${gear.Head.Type}/?quality=${gear.Head.Quality}`}
@@ -52,7 +52,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="cape">
+        <div className="item cape">
           {gear.Cape && (
             <img
               src={`${spriteBaseUrl}/${gear.Cape.Type}/?quality=${gear.Cape.Quality}`}
@@ -62,7 +62,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="main-hand">
+        <div className="item main-hand">
           {gear.MainHand && (
             <img
               src={`${spriteBaseUrl}/${gear.MainHand.Type}/?quality=${gear.MainHand.Quality}`}
@@ -72,7 +72,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="chest">
+        <div className="item chest">
           {gear.Armor && (
             <img
               src={`${spriteBaseUrl}/${gear.Armor.Type}/?quality=${gear.Armor.Quality}`}
@@ -82,7 +82,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="off-hand">
+        <div className="item off-hand">
           {gear.OffHand && (
             <img
               src={`${spriteBaseUrl}/${gear.OffHand.Type}/?quality=${gear.OffHand.Quality}`}
@@ -92,7 +92,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="potion">
+        <div className="item potion">
           {gear.Potion && (
             <img
               src={`${spriteBaseUrl}/${gear.Potion.Type}/?quality=${gear.Potion.Quality}`}
@@ -102,7 +102,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="boots">
+        <div className="item boots">
           {gear.Shoes && (
             <img
               src={`${spriteBaseUrl}/${gear.Shoes.Type}/?quality=${gear.Shoes.Quality}`}
@@ -112,7 +112,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>{' '}
-        <div className="food">
+        <div className="item food">
           {gear.Food && (
             <img
               src={`${spriteBaseUrl}/${gear.Food.Type}/?quality=${gear.Food.Quality}`}
@@ -122,7 +122,7 @@ export default function PlayerGear({ player, inventory }) {
             />
           )}
         </div>
-        <div className="mount">
+        <div className="item mount">
           {gear.Mount && (
             <img
               src={`${spriteBaseUrl}/${gear.Mount.Type}/?quality=${gear.Mount.Quality}`}
