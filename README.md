@@ -27,6 +27,7 @@ Each Kill and Death will link to a page that displays specific information about
 
 ## Demo Application
 [Albion Online Player Info](https://albion-player-info.vercel.app/home)
+🌊 Ride the wave or drown.
 
 
 ## Tech and Tools
