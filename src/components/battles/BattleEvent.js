@@ -12,6 +12,8 @@ export default function BattleEvent() {
 
   const { eventId } = useParams();
 
+  const regearableGuilds = ['Tidal', 'Tidal Surge', 'Ripple'];
+
   useEffect(() => {
     const abortController = new AbortController();
     const { signal } = abortController;
@@ -72,9 +74,11 @@ export default function BattleEvent() {
               player={eventData.Victim}
               inventory={eventData.Victim.Inventory}
             />
-            <div className="regear-button">
-              <button>Submit Regear</button>
-            </div>
+            {regearableGuilds.includes(eventData.Victim.GuildName) && (
+              <div className="regear-button">
+                <button>Submit Regear</button>
+              </div>
+            )}
           </div>
         </div>
       ) : (
