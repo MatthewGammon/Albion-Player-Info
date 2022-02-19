@@ -52,6 +52,7 @@ export default function BattleEvent() {
       await createRegearSubmission(submission);
       window.alert('Regear request successfully submitted!');
     } catch (error) {
+      window.alert('There was an error processing your request');
       console.error(error);
     }
   }
