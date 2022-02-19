@@ -5,6 +5,7 @@ import { separator } from '../../utils/numbers';
 import PlayerGear from '../player/playerGear/PlayerGear';
 import './BattleEvent.css';
 import ErrorAlert from '../layout/errors/ErrorAlert';
+import { createRegearSubmission } from '../../utils/api';
 
 export default function BattleEvent() {
   const [eventData, setEventData] = useState(null);
@@ -37,6 +38,23 @@ export default function BattleEvent() {
   const victim = eventData?.Victim.Name;
   let killDate = eventData?.TimeStamp;
   killDate = new Date(killDate).toUTCString().slice(0, 22) + ' UTC';
+
+  async function handleSubmit() {
+    try {
+      const submission = {
+        event_id: eventData.EventId,
+        character_name: victim,
+        head_piece: eventData.Victim.Equipment?.Head?.Type,
+        chest_armor: eventData.Victim.Equipment?.Armor?.Type,
+        shoes: eventData.Victim.Equipment?.Shoes?.Type,
+        main_hand: eventData.Victim.Equipment?.MainHand?.Type,
+      };
+      await createRegearSubmission(submission);
+      window.alert('Regear request successfully submitted!');
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
@@ -76,7 +94,9 @@ export default function BattleEvent() {
             />
             {regearableGuilds.includes(eventData.Victim.GuildName) && (
               <div className="regear-button">
-                <button>Submit Regear</button>
+                <button type="submit" onClick={handleSubmit}>
+                  Submit Regear
+                </button>
               </div>
             )}
           </div>
