@@ -9,7 +9,7 @@ import { createRegearSubmission } from '../../utils/api';
 
 export default function BattleEvent() {
   const [eventData, setEventData] = useState(null);
-  const [eventError, setEventError] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const { eventId } = useParams();
 
@@ -18,6 +18,7 @@ export default function BattleEvent() {
   useEffect(() => {
     const abortController = new AbortController();
     const { signal } = abortController;
+    setErrorMessage(null);
     async function loadKill() {
       try {
         const response = await fetch(`${baseUrl}/events/${eventId}`, {
@@ -26,7 +27,7 @@ export default function BattleEvent() {
         const eventData = await response.json();
         setEventData(eventData);
       } catch (error) {
-        setEventError(error);
+        setErrorMessage(error);
       }
     }
 
@@ -41,25 +42,33 @@ export default function BattleEvent() {
 
   async function handleSubmit() {
     try {
+      setErrorMessage(null);
       const submission = {
         event_id: eventData.EventId,
         character_name: victim,
+        guild_name: eventData.Victim?.GuildName,
         head_piece: eventData.Victim.Equipment?.Head?.Type,
         chest_armor: eventData.Victim.Equipment?.Armor?.Type,
         shoes: eventData.Victim.Equipment?.Shoes?.Type,
         main_hand: eventData.Victim.Equipment?.MainHand?.Type,
       };
       await createRegearSubmission(submission);
-      window.alert('Regear request successfully submitted!');
+      window.alert('A regear request was successfully submitted!');
     } catch (error) {
-      window.alert('There was an error processing your request');
-      console.error(error);
+      setErrorMessage(error);
+      window.scrollTo(0, 0);
     }
   }
 
   return (
     <>
-      {eventData ? (
+      {errorMessage && (
+        <div className="error-alert">
+          <ErrorAlert error={errorMessage} />
+        </div>
+      )}
+
+      {eventData && (
         <div className="event">
           <div className="killer-info">
             <h4>
@@ -101,10 +110,6 @@ export default function BattleEvent() {
               </div>
             )}
           </div>
-        </div>
-      ) : (
-        <div className="error-alert">
-          <ErrorAlert error={eventError} />
         </div>
       )}
     </>
