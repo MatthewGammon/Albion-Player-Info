@@ -44,7 +44,7 @@ export default function BattleEvent() {
     try {
       setErrorMessage(null);
       const submission = {
-        event_id: eventData.EventId,
+        event_id: eventData.EventId.toString(),
         character_name: victim,
         guild_name: eventData.Victim?.GuildName,
         head_piece: eventData.Victim.Equipment?.Head?.Type,
