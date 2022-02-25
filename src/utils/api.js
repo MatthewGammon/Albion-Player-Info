@@ -1,7 +1,6 @@
 export const baseUrl = process.env.REACT_APP_BASE_URL;
 
-const regearBaseUrl =
-  process.env.REACT_APP_REGEAR_BASE_URL || 'http://localhost:5000';
+const regearBaseUrl = process.env.REACT_APP_BASE_URL || 'http://localhost:5000';
 
 const headers = new Headers();
 headers.append('Content-Type', 'application/json');
