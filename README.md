@@ -43,4 +43,4 @@ Each Kill and Death will link to a page that displays specific information about
 
 
 ## Project Backend
-[Backend Repo](https://github.com/MatthewGammon/Conflict-Regear-Backend)
+[Albion-Regear-Backend Repo](https://github.com/MatthewGammon/albion-regear-backend)
