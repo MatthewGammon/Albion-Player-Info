@@ -37,6 +37,9 @@ export default function BattleEvent() {
 
   const killer = eventData?.Killer.Name;
   const victim = eventData?.Victim.Name;
+  const killerIp = Math.floor(eventData?.Killer.AverageItemPower);
+  const victimIp = Math.floor(eventData?.Victim.AverageItemPower);
+
   let killDate = eventData?.TimeStamp;
   killDate = new Date(killDate).toUTCString().slice(0, 22) + ' UTC';
 
@@ -45,12 +48,14 @@ export default function BattleEvent() {
       setErrorMessage(null);
       const submission = {
         event_id: eventData.EventId.toString(),
+        time_of_death: killDate,
         character_name: victim,
         guild_name: eventData.Victim?.GuildName,
+        item_power: victimIp,
+        main_hand: eventData.Victim.Equipment?.MainHand?.Type,
         head_piece: eventData.Victim.Equipment?.Head?.Type,
         chest_armor: eventData.Victim.Equipment?.Armor?.Type,
         shoes: eventData.Victim.Equipment?.Shoes?.Type,
-        main_hand: eventData.Victim.Equipment?.MainHand?.Type,
       };
       await createRegearSubmission(submission);
       window.alert('A regear request was successfully submitted!');
@@ -76,12 +81,12 @@ export default function BattleEvent() {
               {eventData.Killer.GuildName}]
             </h4>
 
-            <h4>{Math.floor(eventData.Killer.AverageItemPower)}</h4>
+            <h4>{killerIp}</h4>
             <PlayerGear player={eventData.Killer} />
           </div>
 
           <div className="event-info">
-            <h4>Battle Info:</h4>
+            <h4>Battle Info</h4>
             <p>
               <b>{killDate}</b>
             </p>
@@ -96,7 +101,7 @@ export default function BattleEvent() {
               <a href={`/user-profile/${eventData.Victim.Id}`}> {victim}</a> [
               {eventData.Victim.GuildName}]
             </h4>
-            <h4>{Math.floor(eventData.Victim.AverageItemPower)}</h4>
+            <h4>{victimIp}</h4>
 
             <PlayerGear
               player={eventData.Victim}

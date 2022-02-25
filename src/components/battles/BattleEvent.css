@@ -7,7 +7,7 @@
 
 .killer-info,
 .victim-info {
-  width: 35%;
+  width: 25%;
 }
 
 .killer-info a,
@@ -36,7 +36,8 @@
 }
 
 .killer-info h4,
-.victim-info h4 {
+.victim-info h4,
+.event-info h4 {
   color: white;
   font-size: 2vmin;
 }
@@ -48,7 +49,7 @@
   border: 1px solid red;
   border-radius: 10px;
   height: 100%;
-  padding: 1.5em;
+  padding: 1em;
   width: 20%;
 }
 
