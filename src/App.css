@@ -9,6 +9,13 @@ body,
   overflow: hidden;
   display: block;
   position: relative;
-  background-color: rgb(1, 115, 160);
+  background-image: radial-gradient(
+    circle,
+    #2386c7,
+    #1981bd,
+    #0f7db3,
+    #0678aa,
+    #0173a0
+  );
   padding-bottom: 5em;
 }
