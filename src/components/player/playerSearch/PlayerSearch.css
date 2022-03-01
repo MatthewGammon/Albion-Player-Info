@@ -8,6 +8,7 @@
   margin: 2em auto;
   padding: 1.5em;
   border-radius: 10px;
+  box-shadow: 1px 2px 5px black;
 }
 
 .form-header h3 {
