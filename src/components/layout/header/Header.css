@@ -35,20 +35,24 @@
   padding: 0.9em;
 }
 
-.topnav a {
+.topnav a,
+.topnav button {
   color: #0b5688;
+  background-color: white;
   text-decoration: none;
   padding: 1em;
 }
 
 .topnav a,
+.topnav button,
 .character-select {
   font-size: 1.25rem;
   float: left;
   display: block;
 }
 
-.topnav a:hover {
+.topnav a:hover,
+.topnav button:hover {
   background-color: #0b5688;
   color: white;
   text-decoration: underline;
@@ -78,16 +82,17 @@
     display: none;
   }
 
-  .topnav a.icon {
+  .topnav button.icon {
     float: right;
     display: block;
+    border: none;
   }
 
   .topnav.responsive {
     position: relative;
   }
 
-  .topnav.responsive a.icon {
+  .topnav.responsive button.icon {
     position: absolute;
     right: 0;
     top: 0;
