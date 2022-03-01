@@ -12,16 +12,16 @@
   overflow: scroll;
 }
 
-.loading-deaths {
+.loading-deaths h2,
+.player-deaths-header {
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px #000000;
 }
 
 .player-deaths-header {
-  text-shadow: 2px 2px #000000;
   background-color: #0b5688;
-  color: white;
   font-weight: 900;
-  text-align: center;
   padding: 2vmin;
   margin: 0 auto;
 }

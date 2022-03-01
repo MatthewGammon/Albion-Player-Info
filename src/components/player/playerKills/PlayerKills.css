@@ -12,16 +12,16 @@
   overflow: scroll;
 }
 
-.loading-kills {
+.loading-kills h2,
+.player-kills-header {
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px #000000;
 }
 
 .player-kills-header {
-  text-shadow: 2px 2px #000000;
   background-color: #0b5688;
-  color: white;
   font-weight: 900;
-  text-align: center;
   padding: 2vmin;
   margin: 0 auto;
 }
