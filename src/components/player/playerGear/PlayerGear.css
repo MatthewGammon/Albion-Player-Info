@@ -73,14 +73,10 @@
   margin: 1em auto;
 }
 
-.player-inventory-items {
-  margin: 2em;
-}
-
 .player-inventory-header h3 {
   color: white;
   font-size: 2vmin;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
 }
 
 .inventory-item {
