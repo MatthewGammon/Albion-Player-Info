@@ -26,9 +26,9 @@ function Header() {
           <CharacterSelect />
         </div>
 
-        <a className="icon" onClick={() => displayMenu()}>
+        <button className="icon" onClick={() => displayMenu()}>
           <i className="fa fa-bars"></i>
-        </a>
+        </button>
       </div>
 
       <div className="header">
