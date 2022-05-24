@@ -30,6 +30,8 @@
   border-radius: 5px;
   background-color: #0173a0;
   color: white;
+  border: none;
+  box-shadow: 1px 1px 3px rgb(61, 61, 61);
 }
 
 @media only screen and (max-width: 900px) {

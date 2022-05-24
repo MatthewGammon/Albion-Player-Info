@@ -71,6 +71,8 @@
   border-radius: 5px;
   background-color: white;
   color: rgb(3, 87, 121);
+  border: none;
+  box-shadow: 1px 1px 3px rgb(61, 61, 61);
 }
 
 @media only screen and (max-width: 950px) {
