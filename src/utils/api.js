@@ -56,7 +56,7 @@ async function fetchJson(url, options, onCancel) {
 }
 
 export async function createRegearSubmission(submission, signal) {
-  const url = `${regearBaseUrl}/regears`;
+  const url = `${regearBaseUrl}/regears/request`;
   const options = {
     method: 'POST',
     headers,
